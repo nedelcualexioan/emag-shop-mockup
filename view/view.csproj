@@ -303,6 +303,7 @@
     <Content Include="bin\Debug\db\orderDetails.txt" />
     <Content Include="bin\Debug\db\orders.txt" />
     <Content Include="bin\Debug\db\products.txt" />
+    <None Include="bin\Debug\images\circle1.png" />
     <None Include="Resources\res_87712636cdfe742122fa92fa3d61d521.jpg" />
     <None Include="Resources\pattern_white_x0.5_pattern_vectorized_copy_2x-613x460.png" />
     <None Include="Resources\gray-wallpaper-7.jpg" />

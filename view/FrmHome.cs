@@ -304,7 +304,9 @@ namespace view
                 if (home.Visible)
                 {
                     home.Hide();
+                    navbar.Hide();
                     product = new ProductPage(this, p);
+                    this.BackColor = Color.White;
                     product.Show();
                 }
                 else if(product != null && product.Visible)
@@ -313,6 +315,16 @@ namespace view
                     product = new ProductPage(this, p);
                     product.Show();
                 }
+                else if (cart.Visible)
+                {
+                    cart.Hide();
+                    product = new ProductPage(this, p);
+                    product.Show();
+
+                    this.BackColor = Color.White;
+                }
+
+                product.addClick += productAdd_Click;
             }
             else if(header.isNull() == false && header.getSearch().Equals("Ai libertatea să alegi ce vrei") == false)
             {
@@ -407,7 +419,9 @@ namespace view
                 else
                     emptyCart.Show();
             }
-            
+
+            this.BackColor = Color.FromArgb(228, 241, 249);
+
         }
 
         private void lblDelte_Click(object sender,EventArgs e)
