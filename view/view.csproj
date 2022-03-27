@@ -1,0 +1,322 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D44A16F7-29CD-4E56-829C-686EC94C7E98}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>view</RootNamespace>
+    <AssemblyName>view</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FontAwesome.Net, Version=1.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FontAwesomeDotNet.1.1.1\lib\FontAwesome.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="FontAwesome.Sharp, Version=5.15.4.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f, processorArchitecture=MSIL">
+      <HintPath>..\packages\FontAwesome.Sharp.5.15.4\lib\net472\FontAwesome.Sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FrmHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmHome.Designer.cs">
+      <DependentUpon>FrmHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Header.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="mockupuri\MockupFontAwe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mockupuri\MockupFontAwe.Designer.cs">
+      <DependentUpon>MockupFontAwe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="mockupuri\MockupProd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mockupuri\MockupProd.Designer.cs">
+      <DependentUpon>MockupProd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="mockupuri\MockupProdPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mockupuri\MockupProdPage.Designer.cs">
+      <DependentUpon>MockupProdPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProdCart.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Navbar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ProductPage.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="teste\HeaderTest.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="teste\Header2.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="teste\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="teste\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="mockupuri\MockupCard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mockupuri\MockupCard.Designer.cs">
+      <DependentUpon>MockupCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="teste\ViewLoginT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="teste\ViewLoginT.designer.cs">
+      <DependentUpon>ViewLoginT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="teste\ViewLoginEx.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="teste\ViewLoginEx.Designer.cs">
+      <DependentUpon>ViewLoginEx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="teste\ViewMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="teste\ViewMain.Designer.cs">
+      <DependentUpon>ViewMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewCart.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ViewEmptyCart.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ViewHome.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ViewLogin.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ViewLogNext.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ViewRegister.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <EmbeddedResource Include="FrmHome.resx">
+      <DependentUpon>FrmHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mockupuri\MockupFontAwe.resx">
+      <DependentUpon>MockupFontAwe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mockupuri\MockupProd.resx">
+      <DependentUpon>MockupProd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mockupuri\MockupCard.resx">
+      <DependentUpon>MockupCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mockupuri\MockupProdPage.resx">
+      <DependentUpon>MockupProdPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="teste\ViewLoginT.resx">
+      <DependentUpon>ViewLoginT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="teste\ViewLoginEx.resx">
+      <DependentUpon>ViewLoginEx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="teste\ViewMain.resx">
+      <DependentUpon>ViewMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo_Color.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo_Color1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1200px-Logo_eMAG.svg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\emag\emag.csproj">
+      <Project>{bbb39aaa-a0aa-406b-8cad-2efd1b8005cf}</Project>
+      <Name>emag</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\0c3b3adb1a7530892e55ef36d3be6cb8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\585e4bf3cb11b227491c339a.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3898372_user_people_man_add_icon %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3898372_user_people_man_add_icon %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3898372_user_people_man_add_icon %283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\88362.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\500px-Search_Icon.svg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menu-icon-png-3-lines-11552744384er3xmq5ix5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menu-icon-png-3-lines-11552744384er3xmq5ix51.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\588a6507d06f6719692a2d15.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo_Color2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rounded-rectangle-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rounded-rectangle-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rounded-rectangle-128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\588a6507d06f6719692a2d151.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-menu-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\588a6507d06f6719692a2d152.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ad1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\a52.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\macAir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\Logo_Color.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\s21u.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\addButton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\addFavorites.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\inStock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\outStock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\heart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\cart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\db\customers.txt" />
+    <Content Include="bin\Debug\db\orderDetails.txt" />
+    <Content Include="bin\Debug\db\orders.txt" />
+    <Content Include="bin\Debug\db\products.txt" />
+    <None Include="Resources\res_87712636cdfe742122fa92fa3d61d521.jpg" />
+    <None Include="Resources\pattern_white_x0.5_pattern_vectorized_copy_2x-613x460.png" />
+    <None Include="Resources\gray-wallpaper-7.jpg" />
+    <None Include="Resources\papers.co-vv50-light-moving-dot-white-line-pattern-background-blue-36-3840x2400-4k-wallpaper.jpg" />
+    <None Include="Resources\157-1572257_professional-website-background-images-hd-professional-emails-background.jpg" />
+    <None Include="Resources\istockphoto-1201841885-1024x1024.jpg" />
+    <None Include="Resources\line-sep.png" />
+    <None Include="Resources\iphone13.png" />
+    <None Include="bin\Debug\images\continue.png" />
+    <None Include="bin\Debug\images\line-sep.png" />
+    <None Include="bin\Debug\images\iphone13.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Debug\images\products\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
