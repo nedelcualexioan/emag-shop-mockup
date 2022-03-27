@@ -26,6 +26,8 @@ namespace view
 
         public event EventHandler addClick;
 
+        private String defPath;
+
         public ProductPage(Form par, Product p)
         {
             this.Parent = par;
@@ -73,6 +75,8 @@ namespace view
             pctProduct.ImageLocation = Application.StartupPath + String.Format(@"\images\{0}", p.getPicture());
             pctProduct.Size = new Size(370, 362);
             pctProduct.SizeMode = PictureBoxSizeMode.StretchImage;
+
+            defPath = pctProduct.ImageLocation;
 
             lblPrice.Location = new Point(1393, 201);
             lblPrice.AutoSize = true;
@@ -152,13 +156,13 @@ namespace view
             for (int i = 0; i < files.Count(); i++)
             {
 
-                if (i % 3 == 0 && i != 0)
+                if (i % 4 == 0 && i != 0)
                 {
                     x = 9;
                     y = 160;
                 }
 
-                createCard(files[i], new Point(x, y));
+                createCard(files[i], new Point(x, y), p);
                 
                 
 
@@ -166,7 +170,7 @@ namespace view
             }
         }
 
-        private void createCard(String path, Point p)
+        private void createCard(String path, Point p, Product pr)
         {
 
             PictureBox card = new PictureBox();
@@ -194,15 +198,44 @@ namespace view
             cardInfo.TextAlign = ContentAlignment.MiddleCenter;
 
             card.MouseHover += new EventHandler(this.card_MouseHover);
+            card.MouseLeave += new EventHandler((s, e) => card_MouseLeave(s, e, pr));
+            card.Click += new EventHandler(this.card_MouseClick);
         }
 
         private void card_MouseHover(object sender,EventArgs e)
         {
 
+            PictureBox pct = sender as PictureBox;
+
+            String path = pct.ImageLocation;
 
 
+            pctProduct.ImageLocation = Path.GetDirectoryName(path) + String.Format(@"\big\{0}B.png", Path.GetFileNameWithoutExtension(path));
+
+            
+
+            
+            
+        }
+
+        private void card_MouseLeave(object sender, EventArgs e, Product p)
+        {
+
+            pctProduct.ImageLocation = defPath;
 
 
+        }
+
+        private void card_MouseClick(object sender,EventArgs e)
+        {
+            PictureBox pct = sender as PictureBox;
+
+            String path = pct.ImageLocation;
+
+
+            pctProduct.ImageLocation = Path.GetDirectoryName(path) + String.Format(@"\big\{0}B.png", Path.GetFileNameWithoutExtension(path));
+
+            defPath = pctProduct.ImageLocation;
         }
 
     }
