@@ -48,7 +48,7 @@ namespace view
             this.Parent = par;
             this.Location = new Point(0, 98);
             this.Width = par.Width;
-            this.Height = 448;
+            this.Height = par.Height - 98;
             this.BackColor = Color.FromArgb(228, 241, 249);
 
             sendDel = new ProdCart();

@@ -25,6 +25,7 @@ namespace view
         private ProductPage product;
         private ViewCart cart;
         private ViewEmptyCart emptyCart;
+        private ViewOrderDet orderDet;
 
         private Order order;
         private Customer customer;
@@ -57,12 +58,13 @@ namespace view
             log = new ViewLogNext(this);
             cart = new ViewCart(this);
             emptyCart = new ViewEmptyCart(this);
+           
 
             customers = new ControllerCustomers();
             products = new ControllerProducts();
             details = new ControllerOrderDetails();
             orders = new ControllerOrders();
-
+            orderDet = new ViewOrderDet(this, customers.getCustomer("ctumbridge8@hexun.com"), 2, customers);
             header.Dock = DockStyle.Top;
 
             foreach(Control control in this.Controls)
@@ -70,10 +72,11 @@ namespace view
                 control.Hide();
             }
 
-            initialize();
+            //initialize();
 
-            
-            
+            orderDet.Show();
+            header.Show();
+            this.BackColor = Color.White;
 
             header.userClick += login_Click;
             header.logoClick += homeLogo_Click;

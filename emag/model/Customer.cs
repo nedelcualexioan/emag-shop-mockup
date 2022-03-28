@@ -111,7 +111,7 @@ namespace emag
         public String proprietati()
         {
             String text = "";
-            text += id + "," + full_name + "," + email + "," + password + "," + billing_address;
+            text += id + "," + full_name + "," + email + "," + password + "," + billing_address + "," + is_admin;
 
             return text;
         }

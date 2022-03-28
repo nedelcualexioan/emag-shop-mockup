@@ -71,6 +71,12 @@
     <Compile Include="mockupuri\MockupFontAwe.Designer.cs">
       <DependentUpon>MockupFontAwe.cs</DependentUpon>
     </Compile>
+    <Compile Include="mockupuri\MockupNewData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mockupuri\MockupNewData.Designer.cs">
+      <DependentUpon>MockupNewData.cs</DependentUpon>
+    </Compile>
     <Compile Include="mockupuri\MockupProd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,6 +88,9 @@
     </Compile>
     <Compile Include="mockupuri\MockupProdPage.Designer.cs">
       <DependentUpon>MockupProdPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewOrderDet.cs">
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="ProdCart.cs">
       <SubType>Component</SubType>
@@ -153,6 +162,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="mockupuri\MockupFontAwe.resx">
       <DependentUpon>MockupFontAwe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mockupuri\MockupNewData.resx">
+      <DependentUpon>MockupNewData.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="mockupuri\MockupProd.resx">
       <DependentUpon>MockupProd.cs</DependentUpon>
@@ -303,6 +315,9 @@
     <Content Include="bin\Debug\db\orderDetails.txt" />
     <Content Include="bin\Debug\db\orders.txt" />
     <Content Include="bin\Debug\db\products.txt" />
+    <None Include="bin\Debug\images\sepline.png" />
+    <None Include="bin\Debug\images\sep.png" />
+    <None Include="bin\Debug\images\circle.png" />
     <None Include="bin\Debug\images\circle1.png" />
     <None Include="Resources\res_87712636cdfe742122fa92fa3d61d521.jpg" />
     <None Include="Resources\pattern_white_x0.5_pattern_vectorized_copy_2x-613x460.png" />

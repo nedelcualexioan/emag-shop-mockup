@@ -24,5 +24,10 @@ namespace view.mockupuri
             
 
         }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
