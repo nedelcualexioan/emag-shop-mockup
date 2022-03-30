@@ -65,6 +65,9 @@
     <Compile Include="Header.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="AddAddress.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="mockupuri\MockupFontAwe.cs">
       <SubType>Form</SubType>
     </Compile>

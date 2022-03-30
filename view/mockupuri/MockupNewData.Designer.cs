@@ -30,7 +30,6 @@ namespace view.mockupuri
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -43,7 +42,6 @@ namespace view.mockupuri
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -54,16 +52,6 @@ namespace view.mockupuri
             this.label1.Size = new System.Drawing.Size(332, 31);
             this.label1.TabIndex = 0;
             this.label1.Text = "Adauga o noua adresa de livrare";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::view.Properties.Resources.sepline;
-            this.pictureBox1.Location = new System.Drawing.Point(-380, -132);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1513, 363);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
             // 
             // label2
             // 
@@ -100,9 +88,9 @@ namespace view.mockupuri
             this.label4.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(14, 172);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(150, 19);
+            this.label4.Size = new System.Drawing.Size(124, 19);
             this.label4.TabIndex = 5;
-            this.label4.Text = "Persoana de contact";
+            this.label4.Text = "Adresa de livrare";
             // 
             // label5
             // 
@@ -203,10 +191,9 @@ namespace view.mockupuri
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.pictureBox1);
             this.Name = "MockupNewData";
             this.Text = "MockupNewData";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.Load += new System.EventHandler(this.MockupNewData_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -215,7 +202,6 @@ namespace view.mockupuri
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox1;

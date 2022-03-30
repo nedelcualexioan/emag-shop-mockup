@@ -31,6 +31,8 @@ namespace view
         private PictureBox pctSep2;
         private IconButton btnAdd;
 
+        private AddAddress add;
+
         public ViewOrderDet(Form par, Customer customer, int prodNr, ControllerCustomers control)
         {
 
@@ -40,7 +42,11 @@ namespace view
             this.Width = par.Width;
             this.Height = par.Height - 98;
 
+            add = new AddAddress(customer, control);
+
             init();
+
+           
 
             pnlDelivery.BackColor = Color.FromArgb(228, 241, 249);
             pnlDelivery.Location = new Point(210, 42);
@@ -93,6 +99,10 @@ namespace view
             txtAddress.Location = new Point(66, 227);
             txtAddress.Font = new Font("Open Sans", 9.75f, FontStyle.Regular);
             txtAddress.Size = new Size(338, 25);
+            if (customer.getAddress().Equals("none") == false)
+            {
+                txtAddress.Text = customer.getAddress();
+            }
 
             pctTruck.IconChar = IconChar.Truck;
             pctTruck.IconSize = 27;
@@ -142,6 +152,8 @@ namespace view
             btnAdd.IconSize = 20;
 
             txtAddress.TextChanged += new EventHandler((s, e) => txtAddress_TextChanged(s, e, customer, control));
+            btnAdd.Click += new EventHandler(btnAdd_Click);
+            add.close += AddAdress_FormClosed;
         }
 
         private void init()
@@ -164,6 +176,8 @@ namespace view
             pctSep2 = new PictureBox();
             btnAdd = new IconButton();
 
+            
+
             lblDetails.Parent = this;
             pnlDelivery.Parent = this;
 
@@ -183,7 +197,7 @@ namespace view
             btnAdd.Parent = pnlDelivery;
 
 
-
+            
 
         }
 
@@ -202,5 +216,19 @@ namespace view
             ctr.save();
 
         }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            
+            add.ShowDialog();
+        }
+
+        private void AddAdress_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.txtAddress.Text = add.getAddress();
+            this.lblName.Text = add.getName();
+        }
+
+        
     }
 }

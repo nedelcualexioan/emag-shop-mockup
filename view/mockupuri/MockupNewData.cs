@@ -16,5 +16,10 @@ namespace view.mockupuri
         {
             InitializeComponent();
         }
+
+        private void MockupNewData_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

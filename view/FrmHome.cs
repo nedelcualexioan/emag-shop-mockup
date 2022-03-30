@@ -38,6 +38,8 @@ namespace view
         public FrmHome()
         {
 
+            
+
             InitializeComponent();
 
             this.Size = Screen.PrimaryScreen.Bounds.Size;
@@ -46,7 +48,7 @@ namespace view
             this.MaximumSize = this.Size;
 
             this.WindowState = FormWindowState.Maximized;
-            
+            this.Text = "eMAG - Libertate in fiecare zi";
 
             isLogged = false;
 
