@@ -66,7 +66,6 @@ namespace view
             products = new ControllerProducts();
             details = new ControllerOrderDetails();
             orders = new ControllerOrders();
-            orderDet = new ViewOrderDet(this, customers.getCustomer("ctumbridge8@hexun.com"), 2, customers);
             header.Dock = DockStyle.Top;
 
             foreach(Control control in this.Controls)
@@ -74,11 +73,7 @@ namespace view
                 control.Hide();
             }
 
-            //initialize();
-
-            orderDet.Show();
-            header.Show();
-            this.BackColor = Color.White;
+            initialize();
 
             header.userClick += login_Click;
             header.logoClick += homeLogo_Click;
@@ -99,9 +94,11 @@ namespace view
 
 
 
-            cart.detailsDel += lblDelte_Click;
+            cart.detailsDel += lblDelete_Click;
 
             emptyCart.returnClick += btnReturn_Click;
+
+            cart.nextClick += cartNext_Click;
         }
 
 
@@ -297,6 +294,12 @@ namespace view
                 home.Show();
                 navbar.Show();
             }
+            else if (orderDet.Visible)
+            {
+                orderDet.Hide();
+                home.Show();
+                navbar.Show();
+            }
             this.BackColor = SystemColors.Control;
         }
 
@@ -305,25 +308,23 @@ namespace view
             Product p = products.getProd(header.getSearch());
             if (p != null)
             {
+                product = new ProductPage(this, p);
 
                 if (home.Visible)
                 {
                     home.Hide();
                     navbar.Hide();
-                    product = new ProductPage(this, p);
                     this.BackColor = Color.White;
                     product.Show();
                 }
                 else if(product != null && product.Visible)
                 {
                     product.Hide();
-                    product = new ProductPage(this, p);
                     product.Show();
                 }
                 else if (cart.Visible)
                 {
                     cart.Hide();
-                    product = new ProductPage(this, p);
                     product.Show();
 
                     this.BackColor = Color.White;
@@ -429,7 +430,7 @@ namespace view
 
         }
 
-        private void lblDelte_Click(object sender,EventArgs e)
+        private void lblDelete_Click(object sender,EventArgs e)
         {
 
 
@@ -443,6 +444,18 @@ namespace view
             emptyCart.Hide();
             home.Show();
             navbar.Show();
+        }
+
+        private void cartNext_Click(object sender,EventArgs e)
+        {
+            orderDet = new ViewOrderDet(this, customer, details.getDetails(order), order.getAmmount(), customers);
+
+            cart.Hide();
+
+            orderDet.Show();
+            navbar.Hide();
+
+            this.BackColor = SystemColors.Control;
         }
     }
 }

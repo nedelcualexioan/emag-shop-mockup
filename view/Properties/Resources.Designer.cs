@@ -274,6 +274,36 @@ namespace view.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Daco_5927665 {
+            get {
+                object obj = ResourceManager.GetObject("Daco_5927665", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Daco_59276651 {
+            get {
+                object obj = ResourceManager.GetObject("Daco_59276651", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ezgif_1_0255f46868 {
+            get {
+                object obj = ResourceManager.GetObject("ezgif-1-0255f46868", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap gray_wallpaper_7 {
             get {
                 object obj = ResourceManager.GetObject("gray-wallpaper-7", resourceCulture);
@@ -464,6 +494,16 @@ namespace view.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap next {
+            get {
+                object obj = ResourceManager.GetObject("next", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap outStock {
             get {
                 object obj = ResourceManager.GetObject("outStock", resourceCulture);
@@ -555,9 +595,29 @@ namespace view.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap sep1 {
+            get {
+                object obj = ResourceManager.GetObject("sep1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap sepline {
             get {
                 object obj = ResourceManager.GetObject("sepline", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sepline1 {
+            get {
+                object obj = ResourceManager.GetObject("sepline1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

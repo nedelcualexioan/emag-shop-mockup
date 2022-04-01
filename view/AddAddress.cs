@@ -28,7 +28,7 @@ namespace view
         private Button btnSave;
         private Label lblCancel;
 
-        public event FormClosedEventHandler close = delegate { };
+        public event EventHandler add = delegate { };
 
         public AddAddress(Customer cust, ControllerCustomers ctr)
         {
@@ -113,8 +113,6 @@ namespace view
             txtCity.KeyPress += new KeyPressEventHandler(txtCity_KeyPress);
             btnSave.Click += new EventHandler((s, e) => btnSave_Click(s, e, cust, ctr));
             lblCancel.Click += new EventHandler(lblCancel_Click);
-
-            this.FormClosed += new FormClosedEventHandler(AddAdress_FormClosed);
         }
 
         private void init()
@@ -181,8 +179,13 @@ namespace view
             else
             {
                 cust.setAddress(txtAddress.Text);
+                cust.setName(txtName.Text);
+
                 ctr.save();
+
                 this.Close();
+
+                add(this, null);
             }
         }
 
@@ -199,11 +202,6 @@ namespace view
         public String getName()
         {
             return this.txtName.Text;
-        }
-
-        private void AddAdress_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            close(this, null);
         }
     }
 }

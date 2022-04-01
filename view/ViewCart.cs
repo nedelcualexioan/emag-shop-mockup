@@ -43,6 +43,8 @@ namespace view
 
         public event EventHandler detailsDel = delegate { };
 
+        public event EventHandler nextClick = delegate { };
+
         public ViewCart(Form par)
         {
             this.Parent = par;
@@ -66,7 +68,7 @@ namespace view
 
             containerOrders.Parent = this;
             containerOrders.Location = new Point(272, 85);
-            containerOrders.Size = new Size(975, 360);
+            containerOrders.Size = new Size(975, 600);
 
 
             init();
@@ -157,6 +159,8 @@ namespace view
             this.pctNext.Size = new Size(241, 44);
             this.pctNext.SizeMode = PictureBoxSizeMode.AutoSize;
             this.pctNext.Cursor = Cursors.Hand;
+
+            this.pctNext.Click += new EventHandler(pctNext_Click);
 
         }
 
@@ -338,6 +342,11 @@ namespace view
                     cart.setQuant(val);
                 }
             }
+        }
+
+        public void pctNext_Click(object sender,EventArgs e)
+        {
+            nextClick(this, null);
         }
 
     /*   public void populateOrders(ControllerOrderDetails ctr)

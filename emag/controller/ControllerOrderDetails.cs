@@ -134,5 +134,17 @@ namespace emag
 
             return txt;
         }
+
+        public int getDetails(Order order)
+        {
+            int k = 0;
+
+            foreach(OrderDetails o in details)
+            {
+                if (o.getOrderId() == order.getId())
+                    k++;
+            }
+            return k;
+        }
     }
 }
