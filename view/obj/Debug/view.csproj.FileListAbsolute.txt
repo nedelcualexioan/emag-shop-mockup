@@ -16,10 +16,9 @@ C:\Users\Alex\Documents\C#\OOP\Incapsualrea\emag\view\obj\Debug\view.ViewMain.re
 C:\Users\Alex\Documents\C#\OOP\Incapsualrea\emag\view\obj\Debug\view.MockupCard.resources
 C:\Users\Alex\Documents\C#\OOP\Incapsualrea\emag\view\obj\Debug\view.FrmHome.resources
 C:\Users\Alex\Documents\C#\OOP\Incapsualrea\emag\view\obj\Debug\view.ViewLoginT.resources
-C:\Users\Alex\Documents\C#\OOP\Incapsualrea\emag\view\obj\Debug\view.MockupProdPage.resources
 C:\Users\Alex\Documents\C#\OOP\Incapsualrea\emag\view\bin\Debug\FontAwesome.Sharp.dll
 C:\Users\Alex\Documents\C#\OOP\Incapsualrea\emag\view\bin\Debug\FontAwesome.Net.dll
 C:\Users\Alex\Documents\C#\OOP\Incapsualrea\emag\view\bin\Debug\FontAwesome.Net.pdb
-C:\Users\Alex\Documents\C#\OOP\Incapsualrea\emag\view\obj\Debug\view.mockupuri.MockupProdPage.resources
 C:\Users\Alex\Documents\C#\OOP\Incapsualrea\emag\view\obj\Debug\view.MockupFontAwe.resources
 C:\Users\Alex\Documents\C#\OOP\Incapsualrea\emag\view\obj\Debug\view.mockupuri.MockupNewData.resources
+C:\Users\Alex\Documents\C#\OOP\Incapsualrea\emag\view\obj\Debug\view.mockupuri.MockupProd.resources

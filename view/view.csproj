@@ -86,11 +86,8 @@
     <Compile Include="mockupuri\MockupProd.Designer.cs">
       <DependentUpon>MockupProd.cs</DependentUpon>
     </Compile>
-    <Compile Include="mockupuri\MockupProdPage.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="mockupuri\MockupProdPage.Designer.cs">
-      <DependentUpon>MockupProdPage.cs</DependentUpon>
+    <Compile Include="ViewSummary.cs">
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="ViewOrderDet.cs">
       <SubType>Component</SubType>
@@ -169,14 +166,11 @@
     <EmbeddedResource Include="mockupuri\MockupNewData.resx">
       <DependentUpon>MockupNewData.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="mockupuri\MockupProd.resx">
-      <DependentUpon>MockupProd.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="mockupuri\MockupCard.resx">
       <DependentUpon>MockupCard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="mockupuri\MockupProdPage.resx">
-      <DependentUpon>MockupProdPage.cs</DependentUpon>
+    <EmbeddedResource Include="mockupuri\MockupProd.resx">
+      <DependentUpon>MockupProd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

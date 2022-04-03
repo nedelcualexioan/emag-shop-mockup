@@ -188,10 +188,10 @@ namespace view
 
         }
 
-        public void add(Product p)
+        public void add(Product p, String text)
         {
 
-            ProdCart prod = new ProdCart(p, new Point(0, height), containerOrders);
+            ProdCart prod = new ProdCart(p, text, new Point(0, height), containerOrders);
 
 
             height += 312;
@@ -347,6 +347,24 @@ namespace view
         public void pctNext_Click(object sender,EventArgs e)
         {
             nextClick(this, null);
+        }
+        public void setPic(Product p, String path)
+        {
+            foreach(Control c in containerOrders.Controls)
+            {
+                ProdCart prod = c as ProdCart;
+
+                if (prod != null)
+                {
+
+                    if (prod.getProdName().Contains(p.getName()))
+                    {
+                        prod.setImage(path);
+
+                        break;
+                    }
+                }
+            }
         }
 
     /*   public void populateOrders(ControllerOrderDetails ctr)

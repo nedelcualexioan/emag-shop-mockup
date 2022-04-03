@@ -37,6 +37,7 @@ namespace view
             this.Height = 60;
             this.BackColor = Color.White;
 
+            
 
             pctLogo = new PictureBox();
             txtSearch = new TextBox();

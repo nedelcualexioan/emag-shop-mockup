@@ -72,7 +72,17 @@ namespace view
             lblProduct.Text = p.getName();
 
             pctProduct.Location = new Point(436, 183);
-            pctProduct.ImageLocation = Application.StartupPath + String.Format(@"\images\{0}", p.getPicture());
+
+            
+
+            if (Directory.EnumerateFiles(Application.StartupPath + @"\images\products\" + p.getName()).Count() != 0)
+                pctProduct.ImageLocation = Directory.GetFiles(Application.StartupPath + @"\images\products\" + p.getName() + @"\big\").First();
+            else
+            {
+                pctProduct.ImageLocation = Application.StartupPath + String.Format(@"\images\{0}", p.getPicture());
+            }
+
+         
             pctProduct.Size = new Size(370, 362);
             pctProduct.SizeMode = PictureBoxSizeMode.StretchImage;
 
@@ -149,24 +159,40 @@ namespace view
 
         private void populateCards(Product p)
         {
+
+
             String[] files = Directory.GetFiles(Application.StartupPath + String.Format(@"\images\products\{0}\", p.getName()));
-
-            int x = 9, y = 34;
-
-            for (int i = 0; i < files.Count(); i++)
+            if (files.Count() != 0)
             {
 
-                if (i % 4 == 0 && i != 0)
+                int x = 9, y = 34;
+
+                for (int i = 0; i < files.Count(); i++)
                 {
-                    x = 9;
-                    y = 160;
+
+                    if (i % 4 == 0 && i != 0)
+                    {
+                        x = 9;
+                        y = 160;
+                    }
+
+                    createCard(files[i], new Point(x, y), p);
+
+
+
+                    x += 88;
                 }
+            }
+            else
+            {
+                lblColor.Hide();
 
-                createCard(files[i], new Point(x, y), p);
-                
-                
+                lblPrice.Left -= 350;
+                pctStock.Left -= 350;
+                pctAdd.Left -= 350;
+                pctFav.Left -= 350;
 
-                x += 88;
+                containerCards.Hide();
             }
         }
 
@@ -238,5 +264,14 @@ namespace view
             defPath = pctProduct.ImageLocation;
         }
 
+        public String getColor()
+        {
+            return Path.GetFileNameWithoutExtension(pctProduct.ImageLocation).Replace("B", "");
+        }
+
+        public String getPath()
+        {
+            return pctProduct.ImageLocation;
+        }
     }
 }

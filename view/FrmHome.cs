@@ -26,6 +26,7 @@ namespace view
         private ViewCart cart;
         private ViewEmptyCart emptyCart;
         private ViewOrderDet orderDet;
+        private ViewSummary viewSummary;
 
         private Order order;
         private Customer customer;
@@ -73,7 +74,12 @@ namespace view
                 control.Hide();
             }
 
-            initialize();
+            //initialize();
+
+            customer = customers.getCustomer("admin@emag.ro");
+
+            viewSummary = new ViewSummary(this, customer, "Card online", "Card");
+            viewSummary.Show();
 
             header.userClick += login_Click;
             header.logoClick += homeLogo_Click;
@@ -275,32 +281,34 @@ namespace view
 
         private void homeLogo_Click(object sender, EventArgs e)
         {
-          
-            if (product != null && product.Visible)
+            if (home.Visible == false)
             {
-                product.Hide();
-                home.Show();
-                navbar.Show();
+                if (product != null && product.Visible)
+                {
+                    product.Hide();
+                    home.Show();
+                    navbar.Show();
+                }
+                else if (cart.Visible)
+                {
+                    cart.Hide();
+                    home.Show();
+                    navbar.Show();
+                }
+                else if (emptyCart.Visible)
+                {
+                    emptyCart.Hide();
+                    home.Show();
+                    navbar.Show();
+                }
+                else if (orderDet.Visible)
+                {
+                    orderDet.Hide();
+                    home.Show();
+                    navbar.Show();
+                }
+                this.BackColor = SystemColors.Control;
             }
-            else if (cart.Visible)
-            {
-                cart.Hide();
-                home.Show();
-                navbar.Show();
-            }
-            else if (emptyCart.Visible)
-            {
-                emptyCart.Hide();
-                home.Show();
-                navbar.Show();
-            }
-            else if (orderDet.Visible)
-            {
-                orderDet.Hide();
-                home.Show();
-                navbar.Show();
-            }
-            this.BackColor = SystemColors.Control;
         }
 
         private void headerSearch_Click(object sender,EventArgs e)
@@ -308,10 +316,12 @@ namespace view
             Product p = products.getProd(header.getSearch());
             if (p != null)
             {
-                product = new ProductPage(this, p);
+                
 
                 if (home.Visible)
                 {
+                    product = new ProductPage(this, p);
+
                     home.Hide();
                     navbar.Hide();
                     this.BackColor = Color.White;
@@ -320,15 +330,30 @@ namespace view
                 else if(product != null && product.Visible)
                 {
                     product.Hide();
+
+                    product = new ProductPage(this, p);
+
                     product.Show();
                 }
                 else if (cart.Visible)
                 {
+                    product = new ProductPage(this, p);
+
                     cart.Hide();
                     product.Show();
 
                     this.BackColor = Color.White;
                 }
+                else if (emptyCart.Visible)
+                {
+                    product = new ProductPage(this, p);
+
+                    emptyCart.Hide();
+                    product.Show();
+
+                    this.BackColor = Color.White;
+                }
+                
 
                 product.addClick += productAdd_Click;
             }
@@ -371,8 +396,12 @@ namespace view
 
                 if (cart.isCart(p) == false)
                 {
-                    this.cart.add(p);
+                    this.cart.add(p, product.getColor());
                     MessageBox.Show("Produs adaugat in cos", product.getName(), MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    this.cart.setPic(p, product.getPath());
+
+
                 }
                 else if (cart.getProdCart(p).getQuant() < 4)
                 {
@@ -434,7 +463,7 @@ namespace view
         {
 
 
-            details.rmOrderDetails(products.getProduct(cart.getSender().getName()));
+            details.rmOrderDetails(products.getProdPartial(cart.getSender().getName()));
 
 
         }
@@ -450,12 +479,22 @@ namespace view
         {
             orderDet = new ViewOrderDet(this, customer, details.getDetails(order), order.getAmmount(), customers);
 
+            orderDet.nextClick += detailsNext_Click;
+
             cart.Hide();
 
             orderDet.Show();
             navbar.Hide();
 
             this.BackColor = SystemColors.Control;
+        }
+
+        private void detailsNext_Click(object sender,EventArgs e)
+        {
+            if (orderDet.isChecked() == false)
+            {
+                MessageBox.Show("Va rugam sa alegeti o modalitate de plata", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
     }
 }

@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
 using emag;
+using System.IO;
 
 namespace view
 {
@@ -31,7 +32,7 @@ namespace view
 
         public event EventHandler delClick = delegate { };
 
-        public ProdCart(Product prod, Point p, Panel par)
+        public ProdCart(Product prod, String text, Point p, Panel par)
         {
 
             this.Parent = par;
@@ -70,7 +71,15 @@ namespace view
             this.lblProd.AutoSize = true;
             this.lblProd.Font = new Font("Open Sans", 12F, FontStyle.Bold);
             this.lblProd.Location = new Point(294, 80);
-            this.lblProd.Text = prod.getName();
+
+            if (Directory.EnumerateFiles(Application.StartupPath + @"\images\products\" + prod.getName()).Count() != 0)
+            {
+                this.lblProd.Text = prod.getName() + String.Format(" ({0})", text);
+            }
+            else
+            {
+                this.lblProd.Text = prod.getName();
+            }
 
             this.lblProd.AutoSize = false;
             this.lblProd.Size = new Size(285, 55);
@@ -186,6 +195,16 @@ namespace view
         private void lblDelete_Click(object sender,EventArgs e)
         {
             delClick(this, null);
+        }
+
+        public String getProdName()
+        {
+            return this.lblProd.Text;
+        }
+
+        public void setImage(String path)
+        {
+            this.pctProd.ImageLocation = path;
         }
 
     }

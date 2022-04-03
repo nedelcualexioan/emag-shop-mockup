@@ -2,7 +2,7 @@
 Telefon mobil Samsung Galaxy A52s,Telefoane,1549,true,a52.png,2000
 Telefon mobil Xiaomi Redmi 10,Telefoane,999,false,redmi10.png,0
 Telefon mobil Samsung Galaxy S21,Telefoane,3600,true,s21.png,2900
-Telefon mobil ASUS ROG Phone 5,Telefoane,5000,false,rog5.png,0
+Telefon mobil ASUS ROG Phone 5,Telefoane,5000,true,rog5.png,1500
 Laptop ASUS TUF F15 FX506LH,Laptopuri,3800,true,f15.png,4800
 Laptop ASUS ROG Zephyrus G14 GA401IHR,Laptopuri,4000,true,g14.png,4000
 Laptop Apple MacBook Air,Laptopuri,4800,true,macAir.png,4000

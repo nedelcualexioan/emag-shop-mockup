@@ -64,6 +64,7 @@ namespace view
         private Label sep3;
 
         private Panel pnlFooter;
+
         private Label lblAtEmag;
 
         private IconPictureBox pctOpen;
@@ -81,6 +82,7 @@ namespace view
         private IconPictureBox pctSafe;
         private Label lblSafe;
         private Label lblSafeA;
+
 
         public event EventHandler nextClick = delegate { };
 
@@ -343,7 +345,7 @@ namespace view
 
             pnlFooter.BackColor = Color.White;
             pnlFooter.Size = new Size(this.Width, 170);
-            pnlFooter.Location = new Point(0, pnlSummary.Top + 200);
+            pnlFooter.Location = new Point(0, pnlSummary.Top + pnlSummary.Height + 20);
 
             lblAtEmag.Font = new Font("Open Sans", 9.75f, FontStyle.Bold);
             lblAtEmag.AutoSize = true;
@@ -465,22 +467,6 @@ namespace view
             lblTotal = new Label();
             lblTotalPr = new Label();
             pctNext = new PictureBox();
-
-            pnlFooter = new Panel();
-
-            lblAtEmag = new Label();
-            pctOpen = new IconPictureBox();
-            lblOpen = new Label();
-            lblOpenA = new Label();
-            pctSupport = new IconPictureBox();
-            lblSupport = new Label();
-            lblSupportA = new Label();
-            pctReturn = new IconPictureBox();
-            lblReturn = new Label();
-            lblReturnA = new Label();
-            pctSafe = new IconPictureBox();
-            lblSafe = new Label();
-            lblSafeA = new Label();
             
 
             lblDetails.Parent = this;
@@ -528,7 +514,22 @@ namespace view
             lblTotalPr.Parent = pnlSummary;
             pctNext.Parent = pnlSummary;
 
+            pnlFooter = new Panel();
             pnlFooter.Parent = this;
+
+            lblAtEmag = new Label();
+            pctOpen = new IconPictureBox();
+            lblOpen = new Label();
+            lblOpenA = new Label();
+            pctSupport = new IconPictureBox();
+            lblSupport = new Label();
+            lblSupportA = new Label();
+            pctReturn = new IconPictureBox();
+            lblReturn = new Label();
+            lblReturnA = new Label();
+            pctSafe = new IconPictureBox();
+            lblSafe = new Label();
+            lblSafeA = new Label();
 
             lblAtEmag.Parent = pnlFooter;
             pctOpen.Parent = pnlFooter;
@@ -582,8 +583,7 @@ namespace view
                 lblTotalPr.Location = new Point(574, 37);
                 pctNext.Location = new Point(577, 79);
 
-                lblTotalPr.Text = (int.Parse(Regex.Replace(lblProdPrice.Text, "[^0-9]+", String.Empty)) + int.Parse(Regex.Replace(lblDelivPrice.Text, "[^0-9]+", String.Empty))).ToString();
-                lblTotalPr.Text = (int.Parse(lblTotalPr.Text) + int.Parse(Regex.Replace(lblProcPrice.Text, "[^0-9]+", String.Empty))).ToString() + " Lei";
+                lblTotalPr.Text = (int.Parse(Regex.Replace(lblProdPrice.Text, "[^0-9]+", String.Empty)) + int.Parse(Regex.Replace(lblDelivPrice.Text, "[^0-9]+", String.Empty))).ToString() + " Lei";
             }
             else
             {
@@ -599,7 +599,8 @@ namespace view
                 lblTotalPr.Location = new Point(574, 61);
                 pctNext.Location = new Point(577, 103);
 
-                lblTotalPr.Text = (int.Parse(Regex.Replace(lblProdPrice.Text, "[^0-9]+", String.Empty)) + int.Parse(Regex.Replace(lblDelivPrice.Text, "[^0-9]+", String.Empty))).ToString() + " Lei";
+
+                lblTotalPr.Text = (int.Parse(Regex.Replace(lblProdPrice.Text, "[^0-9]+", String.Empty)) + int.Parse(Regex.Replace(lblDelivPrice.Text, "[^0-9]+", String.Empty)) + 5).ToString() + " Lei";
             }
         }
 

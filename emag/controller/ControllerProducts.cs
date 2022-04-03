@@ -105,6 +105,16 @@ namespace emag
             return null;
         }
 
+        public Product getProdPartial(String text)
+        {
+            foreach(Product p in products)
+            {
+                if (text.Contains(p.getName()))
+                    return p;
+            }
+            return null;
+        }
+
         public void setQuantity(String name, int quantity)
         {
             foreach(Product p in products)
