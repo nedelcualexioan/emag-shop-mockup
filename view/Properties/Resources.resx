@@ -121,11 +121,11 @@
   <data name="pattern_white_x0.5_pattern_vectorized_copy_2x-613x460" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pattern_white_x0.5_pattern_vectorized_copy_2x-613x460.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="1200px-Logo_eMAG.svg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1200px-Logo_eMAG.svg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="sepline1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\images\sepline.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Daco_59276651" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Daco_59276651.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="iphone13" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\images\iphone13.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -138,6 +138,9 @@
   </data>
   <data name="sep1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\images\sep.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="iphone131" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\images\iphone13.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="circle" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\images\circle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -187,17 +190,14 @@
   <data name="3898372_user_people_man_add_icon (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\3898372_user_people_man_add_icon (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Logo_Color3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\images\Logo_Color.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="iphone132" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iphone13.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="585e4bf3cb11b227491c339a" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\585e4bf3cb11b227491c339a.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="circle1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\images\circle1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="continue" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\images\continue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ad1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ad1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -217,26 +217,20 @@
   <data name="3898372_user_people_man_add_icon (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\3898372_user_people_man_add_icon (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="sep" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\images\sep.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="user1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\images\user.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="s21u" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\images\s21.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="a52" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\a52.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="line-sep2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\line-sep.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="1200px-Logo_eMAG.svg" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1200px-Logo_eMAG.svg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="a52" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\a52.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Logo_Color" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Logo_Color.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="user1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\images\user.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="inStock" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\images\inStock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -244,20 +238,26 @@
   <data name="0c3b3adb1a7530892e55ef36d3be6cb8" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\0c3b3adb1a7530892e55ef36d3be6cb8.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="next" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\images\next.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Logo_Color1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Logo_Color1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="3898372_user_people_man_add_icon (3)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\3898372_user_people_man_add_icon (3).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="iphone131" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\images\iphone13.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="sep" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\images\sep.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="res_87712636cdfe742122fa92fa3d61d521" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\res_87712636cdfe742122fa92fa3d61d521.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="157-1572257_professional-website-background-images-hd-professional-emails-background" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\157-1572257_professional-website-background-images-hd-professional-emails-background.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="588a6507d06f6719692a2d152" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\588a6507d06f6719692a2d152.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="addFavorites1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\images\addFavorites.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -268,6 +268,9 @@
   <data name="macAir" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\macAir.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="continue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\images\continue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="gray-wallpaper-7" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\gray-wallpaper-7.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -277,19 +280,19 @@
   <data name="outStock" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\images\outStock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="iphone132" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iphone13.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Logo_Color3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\images\Logo_Color.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="addButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\images\addButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="588a6507d06f6719692a2d152" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\588a6507d06f6719692a2d152.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Daco_59276651" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Daco_59276651.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="cart" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\images\cart.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="next" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\images\next.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="send" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\images\send.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

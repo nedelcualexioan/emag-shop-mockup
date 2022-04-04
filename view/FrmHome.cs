@@ -74,12 +74,7 @@ namespace view
                 control.Hide();
             }
 
-            //initialize();
-
-            customer = customers.getCustomer("admin@emag.ro");
-
-            viewSummary = new ViewSummary(this, customer, "Card online", "Card");
-            viewSummary.Show();
+            initialize();
 
             header.userClick += login_Click;
             header.logoClick += homeLogo_Click;

@@ -43,28 +43,47 @@ namespace view
         private Label lblMethod;
         private Label lblInfo;
 
+        private Panel pnlOrder;
+        private IconPictureBox pctChk4;
+        private Label lblEmag;
+        private Label lblEst;
+        private Label lblSep4;
+        private Label lblProd;
+        private Label lblProdPrice;
+        private Label lblSep5;
+        private Label lblDProc;
+        private Label lblDProcPrice;
+        private Label lblSep6;
+
+        private Label lblTotal;
+        private Label lblAgree;
+        private PictureBox pctSend;
+
         public ViewSummary(Form par, Customer customer, String method, String info)
         {
             this.Parent = par;
             this.Location = new Point(0, 98);
             this.Width = this.Parent.Width;
             this.Height = this.Parent.Height - 98;
-            this.BackColor = SystemColors.Control;
+            this.BackColor = Color.FromArgb(250, 250, 250);
 
             init();
+
+            pnlContainer.Size = new Size(1177, 557);
+            pnlContainer.Top = 67;
+            pnlContainer.BackColor = Color.FromArgb(228, 241, 249);
+            pnlContainer.Left = (pnlContainer.Parent.Width - pnlContainer.Width) / 2;
 
             lblSummary.AutoSize = true;
             lblSummary.Font = new Font("Open Sans", 20.25f, FontStyle.Regular);
             lblSummary.Text = "Sumar comanda";
-            lblSummary.Location = new Point(284, 25);
-
-            pnlContainer.Size = new Size(1170, 557);
-            pnlContainer.Location = new Point(291, 67);
-            pnlContainer.BackColor = Color.FromArgb(228, 241, 249);
+            lblSummary.Location = new Point(300, 25);
+            lblSummary.Left = pnlContainer.Left;
 
             pnlDelivery.Size = new Size(373, 179);
-            pnlDelivery.Location = new Point(18, 18);
+            pnlDelivery.Location = new Point(12, 18);
             pnlDelivery.BackColor = Color.White;
+            pnlDelivery.BorderStyle = BorderStyle.Fixed3D;
 
             pctChk1.IconChar = IconChar.CheckCircle;
             pctChk1.IconSize = 32;
@@ -81,6 +100,7 @@ namespace view
             btnModify1.Font = new Font("Open Sans", 8.25f, FontStyle.Bold);
             btnModify1.ForeColor = Color.FromArgb(46, 118, 183);
             btnModify1.Text = "modifica";
+            btnModify1.Cursor = Cursors.Hand;
 
             lblSep1.AutoSize = false;
             lblSep1.Text = String.Empty;
@@ -104,8 +124,9 @@ namespace view
             lblAddress.Location = new Point(17, 129);
 
             pnlData.Size = new Size(375, 179);
-            pnlData.Location = new Point(397, 18);
+            pnlData.Location = new Point(400, 18);
             pnlData.BackColor = Color.White;
+            pnlData.BorderStyle = BorderStyle.Fixed3D;
 
             pctChk2.IconChar = IconChar.CheckCircle;
             pctChk2.IconSize = 32;
@@ -122,6 +143,7 @@ namespace view
             btnModify2.Location = new Point(267, 20);
             btnModify2.Text = "modifica";
             btnModify2.ForeColor = Color.FromArgb(46, 118, 183);
+            btnModify2.Cursor = Cursors.Hand;
 
             lblSep2.AutoSize = false;
             lblSep2.Size = new Size(330, 1);
@@ -145,8 +167,9 @@ namespace view
             lblAddr.Location = new Point(17, 129);
 
             pnlPayment.Size = new Size(375, 179);
-            pnlPayment.Location = new Point(778, 18);
+            pnlPayment.Location = new Point(789, 18);
             pnlPayment.BackColor = Color.White;
+            pnlPayment.BorderStyle = BorderStyle.Fixed3D;
 
 
             pctChk3.IconChar = IconChar.CheckCircle;
@@ -165,6 +188,7 @@ namespace view
             btnModify3.Text = "modifica";
             btnModify3.ForeColor = Color.FromArgb(46, 118, 183);
             btnModify3.BringToFront();
+            btnModify3.Cursor = Cursors.Hand;
 
             lblSep3.AutoSize = false;
             lblSep3.Size = new Size(340, 1);
@@ -181,6 +205,91 @@ namespace view
             lblInfo.Font = new Font("Open Sans", 9.75f, FontStyle.Regular);
             lblInfo.Text = info;
             lblInfo.Location = new Point(17, 107);
+
+            pnlOrder.Size = new Size(1152, 142);
+            pnlOrder.Location = new Point(12, 213);
+            pnlOrder.BackColor = Color.White;
+            pnlOrder.BorderStyle = BorderStyle.Fixed3D;
+
+            pctChk4.IconChar = IconChar.CheckCircle;
+            pctChk4.IconSize = 32;
+            pctChk4.Size = new Size(32, 32);
+            pctChk4.Location = new Point(28, 15);
+
+            lblEmag.AutoSize = true;
+            lblEmag.Font = new Font("Open Sans", 15.75f, FontStyle.Regular);
+            lblEmag.Text = "Comanda livrata de eMAG";
+            lblEmag.Location = new Point(63, 15);
+
+            lblEst.AutoSize = true;
+            lblEst.Font = new Font("Open Sans", 11.25f, FontStyle.Regular);
+            lblEst.Text = "Estimat livrare: 2-4 zile lucratoare";
+            lblEst.Location = new Point(896, 15);
+
+            lblSep4.AutoSize = false;
+            lblSep4.Size = new Size(1108, 1);
+            lblSep4.Text = String.Empty;
+            lblSep4.BorderStyle = BorderStyle.FixedSingle;
+            lblSep4.Location = new Point(22, 55);
+
+            lblProd.AutoSize = true;
+            lblProd.Font = new Font("Open Sans", 9.75f, FontStyle.Regular);
+            lblProd.Text = "1  x  Telefon mobil Xiaomi Redmi 9A, Dual SIM, 32GB, 4G, Carbon Grey";
+            lblProd.Location = new Point(24, 60);
+
+            lblProdPrice.AutoSize = false;
+            lblProdPrice.Size = new Size(71, 19);
+            lblProdPrice.TextAlign = ContentAlignment.MiddleRight;
+            lblProdPrice.Font = new Font("Open Sans", 9.75f, FontStyle.Bold);
+            lblProdPrice.Text = "480 Lei";
+            lblProdPrice.Location = new Point(1065, 60);
+
+            lblSep5.AutoSize = false;
+            lblSep5.Size = new Size(1108, 1);
+            lblSep5.Location = new Point(22, 92);
+            lblSep5.Text = String.Empty;
+            lblSep5.BorderStyle = BorderStyle.FixedSingle;
+
+            lblDProc.AutoSize = true;
+            lblDProc.Font = new Font("Open Sans", 9.75f, FontStyle.Bold);
+            lblDProc.Text = "Cost livrare si procesare:";
+            lblDProc.Location = new Point(24, 97);
+
+            lblDProcPrice.AutoSize = false;
+            lblDProcPrice.Size = lblProdPrice.Size;
+            lblDProcPrice.Left = lblProdPrice.Left;
+            lblDProcPrice.Top = 97;
+            lblDProcPrice.TextAlign = ContentAlignment.MiddleRight;
+            lblDProcPrice.Font = new Font("Open Sans", 9.75f, FontStyle.Bold);
+            lblDProcPrice.Text = "22 Lei";
+
+            lblSep6.AutoSize = false;
+            lblSep6.Size = new Size(1108, 1);
+            lblSep6.Location = new Point(22, 123);
+            lblSep6.Text = String.Empty;
+            lblSep6.BorderStyle = BorderStyle.FixedSingle;
+
+            lblTotal.AutoSize = false;
+            lblTotal.Size = new Size(pnlContainer.Width, 35);
+            lblTotal.Font = new Font("Open Sans", 18, FontStyle.Bold);
+            lblTotal.Top = 379;
+            lblTotal.TextAlign = ContentAlignment.MiddleCenter;
+            lblTotal.Text = "Total comanda: 471 Lei";
+
+            lblAgree.AutoSize = true;
+            lblAgree.Font = new Font("Open Sans", 9.75f, FontStyle.Regular);
+            lblAgree.Text = "Prin plasarea comenzii, ești de acord cu Termenii și Condițiile, cu\nPolitica de Confidențialitate.";
+            lblAgree.Top = 430;
+            lblAgree.Left = (lblAgree.Parent.Width - lblAgree.Width) / 2;
+
+            pctSend.ImageLocation = Application.StartupPath + @"\images\send.png";
+            pctSend.SizeMode = PictureBoxSizeMode.Normal;
+            pctSend.Top = 488;
+            pctSend.Size = new Size(361, 55);
+            pctSend.Left = (pnlContainer.Width - pctSend.Width) / 2;
+            pctSend.Cursor = Cursors.Hand;
+
+
 
         }
 
@@ -217,6 +326,22 @@ namespace view
             lblMethod = new Label();
             lblInfo = new Label();
 
+            pnlOrder = new Panel();
+            pctChk4 = new IconPictureBox();
+            lblEmag = new Label();
+            lblEst = new Label();
+            lblSep4 = new Label();
+            lblProd = new Label();
+            lblProdPrice = new Label();
+            lblSep5 = new Label();
+            lblDProc = new Label();
+            lblDProcPrice = new Label();
+            lblSep6 = new Label();
+
+            lblTotal = new Label();
+            lblAgree = new Label();
+            pctSend = new PictureBox();
+
             pnlContainer.Parent = this;
 
             lblSummary.Parent = this;
@@ -246,6 +371,22 @@ namespace view
             btnModify3.Parent = pnlPayment;
             lblMethod.Parent = pnlPayment;
             lblInfo.Parent = pnlPayment;
+
+            pnlOrder.Parent = pnlContainer;
+            pctChk4.Parent = pnlOrder;
+            lblEmag.Parent = pnlOrder;
+            lblEst.Parent = pnlOrder;
+            lblSep4.Parent = pnlOrder;
+            lblProd.Parent = pnlOrder;
+            lblProdPrice.Parent = pnlOrder;
+            lblSep5.Parent = pnlOrder;
+            lblDProc.Parent = pnlOrder;
+            lblDProcPrice.Parent = pnlOrder;
+            lblSep6.Parent = pnlOrder;
+
+            lblTotal.Parent = pnlContainer;
+            lblAgree.Parent = pnlContainer;
+            pctSend.Parent = pnlContainer;
 
 
         }
