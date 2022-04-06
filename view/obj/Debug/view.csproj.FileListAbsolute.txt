@@ -22,3 +22,4 @@ C:\Users\Alex\Documents\C#\OOP\Incapsualrea\emag\view\bin\Debug\FontAwesome.Net.
 C:\Users\Alex\Documents\C#\OOP\Incapsualrea\emag\view\obj\Debug\view.MockupFontAwe.resources
 C:\Users\Alex\Documents\C#\OOP\Incapsualrea\emag\view\obj\Debug\view.mockupuri.MockupNewData.resources
 C:\Users\Alex\Documents\C#\OOP\Incapsualrea\emag\view\obj\Debug\view.mockupuri.MockupProd.resources
+C:\Users\Alex\Documents\C#\OOP\Incapsualrea\emag\view\obj\Debug\view.mockupuri.MockupFav.resources

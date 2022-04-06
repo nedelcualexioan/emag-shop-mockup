@@ -31,55 +31,23 @@ namespace view.mockupuri
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.iconPictureBox4 = new FontAwesome.Sharp.IconPictureBox();
-            this.iconPictureBox3 = new FontAwesome.Sharp.IconPictureBox();
-            this.iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
-            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.panel5.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -87,7 +55,6 @@ namespace view.mockupuri
             this.panel1.AutoScroll = true;
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
             this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(0, 97);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1793, 536);
@@ -95,425 +62,142 @@ namespace view.mockupuri
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(241)))), ((int)(((byte)(249)))));
-            this.panel2.Controls.Add(this.pictureBox1);
-            this.panel2.Controls.Add(this.label24);
-            this.panel2.Controls.Add(this.label23);
-            this.panel2.Controls.Add(this.panel6);
-            this.panel2.Controls.Add(this.panel4);
-            this.panel2.Controls.Add(this.panel5);
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel2.Controls.Add(this.panel3);
-            this.panel2.Location = new System.Drawing.Point(266, 164);
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Location = new System.Drawing.Point(388, 15);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1177, 572);
-            this.panel2.TabIndex = 2;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.White;
-            this.panel4.Controls.Add(this.button3);
-            this.panel4.Controls.Add(this.label13);
-            this.panel4.Controls.Add(this.label14);
-            this.panel4.Controls.Add(this.label15);
-            this.panel4.Controls.Add(this.label16);
-            this.panel4.Controls.Add(this.iconPictureBox3);
-            this.panel4.Location = new System.Drawing.Point(789, 18);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(375, 179);
-            this.panel4.TabIndex = 3;
-            // 
-            // button3
-            // 
-            this.button3.Font = new System.Drawing.Font("Open Sans", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(118)))), ((int)(((byte)(183)))));
-            this.button3.Location = new System.Drawing.Point(278, 21);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(84, 32);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "modifica";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(17, 107);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(33, 19);
-            this.label13.TabIndex = 5;
-            this.label13.Text = "Info";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Open Sans", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(17, 69);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(100, 22);
-            this.label14.TabIndex = 4;
-            this.label14.Text = "Card online";
-            // 
-            // label15
-            // 
-            this.label15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label15.Location = new System.Drawing.Point(19, 56);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(340, 1);
-            this.label15.TabIndex = 3;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Open Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(59, 20);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(222, 31);
-            this.label16.TabIndex = 2;
-            this.label16.Text = "Modalitate de plata";
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.White;
-            this.panel5.Controls.Add(this.button2);
-            this.panel5.Controls.Add(this.label7);
-            this.panel5.Controls.Add(this.label8);
-            this.panel5.Controls.Add(this.label9);
-            this.panel5.Controls.Add(this.label10);
-            this.panel5.Controls.Add(this.label11);
-            this.panel5.Controls.Add(this.iconPictureBox2);
-            this.panel5.Location = new System.Drawing.Point(400, 18);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(375, 179);
-            this.panel5.TabIndex = 2;
-            // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("Open Sans", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(118)))), ((int)(((byte)(183)))));
-            this.button2.Location = new System.Drawing.Point(267, 21);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(84, 32);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "modifica";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(17, 129);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(50, 19);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "Adresa";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(17, 107);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(46, 19);
-            this.label8.TabIndex = 5;
-            this.label8.Text = "Nume";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Open Sans", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(17, 69);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(127, 22);
-            this.label9.TabIndex = 4;
-            this.label9.Text = "Persoana fizica\r\n";
-            // 
-            // label10
-            // 
-            this.label10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label10.Location = new System.Drawing.Point(21, 56);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(330, 1);
-            this.label10.TabIndex = 3;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Open Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(63, 17);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(170, 31);
-            this.label11.TabIndex = 2;
-            this.label11.Text = "Date facturare";
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.Controls.Add(this.button1);
-            this.panel3.Controls.Add(this.label6);
-            this.panel3.Controls.Add(this.label5);
-            this.panel3.Controls.Add(this.label4);
-            this.panel3.Controls.Add(this.label3);
-            this.panel3.Controls.Add(this.label2);
-            this.panel3.Controls.Add(this.iconPictureBox1);
-            this.panel3.Location = new System.Drawing.Point(12, 18);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(373, 179);
-            this.panel3.TabIndex = 0;
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Open Sans", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(118)))), ((int)(((byte)(183)))));
-            this.button1.Location = new System.Drawing.Point(267, 20);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(84, 32);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "modifica";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(17, 129);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(50, 19);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "Adresa";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(17, 107);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(46, 19);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "Nume";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Open Sans", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(17, 69);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(152, 22);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Livrare prin curier";
-            // 
-            // label3
-            // 
-            this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label3.Location = new System.Drawing.Point(21, 56);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(330, 1);
-            this.label3.TabIndex = 3;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Open Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(63, 17);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(204, 31);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Modalitate livrare\r\n";
+            this.panel2.Size = new System.Drawing.Size(670, 503);
+            this.panel2.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Open Sans", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(271, 122);
+            this.label1.Font = new System.Drawing.Font("Open Sans", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(13, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(225, 39);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Sumar comanda\r\n";
+            this.label1.Size = new System.Drawing.Size(104, 35);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Favorite";
             // 
-            // panel6
+            // label2
             // 
-            this.panel6.BackColor = System.Drawing.Color.White;
-            this.panel6.Controls.Add(this.label26);
-            this.panel6.Controls.Add(this.label25);
-            this.panel6.Controls.Add(this.label22);
-            this.panel6.Controls.Add(this.label21);
-            this.panel6.Controls.Add(this.label20);
-            this.panel6.Controls.Add(this.label19);
-            this.panel6.Controls.Add(this.label18);
-            this.panel6.Controls.Add(this.label17);
-            this.panel6.Controls.Add(this.label12);
-            this.panel6.Controls.Add(this.iconPictureBox4);
-            this.panel6.Location = new System.Drawing.Point(12, 213);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1152, 142);
-            this.panel6.TabIndex = 4;
-            this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(115, 19);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(111, 19);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "(1 produs in lista)";
             // 
-            // label12
+            // label3
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Open Sans", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(63, 15);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(268, 31);
-            this.label12.TabIndex = 3;
-            this.label12.Text = "Comanda livrata de eMAG";
+            this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label3.Location = new System.Drawing.Point(19, 47);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(633, 1);
+            this.label3.TabIndex = 2;
             // 
-            // label17
+            // panel3
             // 
-            this.label17.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label17.Location = new System.Drawing.Point(22, 55);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(1108, 1);
-            this.label17.TabIndex = 4;
+            this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.Controls.Add(this.label6);
+            this.panel3.Controls.Add(this.pictureBox2);
+            this.panel3.Controls.Add(this.label5);
+            this.panel3.Controls.Add(this.label4);
+            this.panel3.Controls.Add(this.label7);
+            this.panel3.Controls.Add(this.label8);
+            this.panel3.Controls.Add(this.label9);
+            this.panel3.Controls.Add(this.pictureBox1);
+            this.panel3.Location = new System.Drawing.Point(19, 56);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(627, 222);
+            this.panel3.TabIndex = 3;
             // 
-            // label18
+            // label6
             // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(24, 60);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(418, 19);
-            this.label18.TabIndex = 7;
-            this.label18.Text = "1  x  Telefon mobil Xiaomi Redmi 9A, Dual SIM, 32GB, 4G, Carbon Grey";
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Open Sans", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.label6.Location = new System.Drawing.Point(253, 170);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(39, 15);
+            this.label6.TabIndex = 7;
+            this.label6.Text = "Sterge";
             // 
-            // label19
+            // pictureBox2
             // 
-            this.label19.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(1065, 60);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(71, 19);
-            this.label19.TabIndex = 8;
-            this.label19.Text = "480 Lei";
-            this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.pictureBox2.Image = global::view.Properties.Resources.add;
+            this.pictureBox2.Location = new System.Drawing.Point(251, 135);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(122, 32);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox2.TabIndex = 6;
+            this.pictureBox2.TabStop = false;
             // 
-            // label20
+            // label5
             // 
-            this.label20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label20.Location = new System.Drawing.Point(22, 92);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(1108, 1);
-            this.label20.TabIndex = 9;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Open Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Red;
+            this.label5.Location = new System.Drawing.Point(248, 103);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(87, 27);
+            this.label5.TabIndex = 5;
+            this.label5.Text = "3099 Lei";
             // 
-            // label21
+            // label4
             // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(24, 97);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(178, 19);
-            this.label21.TabIndex = 10;
-            this.label21.Text = "Cost livrare si procesare:";
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Open Sans", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label4.Location = new System.Drawing.Point(250, 79);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(96, 15);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "vandut de: eMAG";
             // 
-            // label22
+            // label7
             // 
-            this.label22.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(1069, 97);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(67, 19);
-            this.label22.TabIndex = 11;
-            this.label22.Text = "21 Lei";
-            this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Open Sans", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.Red;
+            this.label7.Location = new System.Drawing.Point(250, 64);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(41, 15);
+            this.label7.TabIndex = 3;
+            this.label7.Text = "in stoc";
             // 
-            // label23
+            // label8
             // 
-            this.label23.Font = new System.Drawing.Font("Open Sans", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(432, 379);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(330, 35);
-            this.label23.TabIndex = 5;
-            this.label23.Text = "Total comanda: 471,98 Lei";
+            this.label8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label8.Location = new System.Drawing.Point(209, 25);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(1, 167);
+            this.label8.TabIndex = 2;
             // 
-            // label24
+            // label9
             // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(417, 430);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(390, 38);
-            this.label24.TabIndex = 6;
-            this.label24.Text = "Prin plasarea comenzii, ești de acord cu Termenii și Condițiile, cu \r\nPolitica de" +
-    " Confidențialitate.\r\n";
-            this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(249, 30);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(318, 19);
+            this.label9.TabIndex = 1;
+            this.label9.Text = "Telefon mobil Samsung Galaxy S21, Dual SIM, 128GB";
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::view.Properties.Resources.send;
-            this.pictureBox1.Location = new System.Drawing.Point(408, 488);
+            this.pictureBox1.Image = global::view.Properties.Resources.s21;
+            this.pictureBox1.Location = new System.Drawing.Point(28, 25);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(361, 55);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.Size = new System.Drawing.Size(167, 167);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            // 
-            // iconPictureBox4
-            // 
-            this.iconPictureBox4.BackColor = System.Drawing.Color.Transparent;
-            this.iconPictureBox4.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.iconPictureBox4.IconChar = FontAwesome.Sharp.IconChar.CheckCircle;
-            this.iconPictureBox4.IconColor = System.Drawing.SystemColors.ControlText;
-            this.iconPictureBox4.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox4.Location = new System.Drawing.Point(28, 15);
-            this.iconPictureBox4.Name = "iconPictureBox4";
-            this.iconPictureBox4.Size = new System.Drawing.Size(32, 32);
-            this.iconPictureBox4.TabIndex = 1;
-            this.iconPictureBox4.TabStop = false;
-            // 
-            // iconPictureBox3
-            // 
-            this.iconPictureBox3.BackColor = System.Drawing.Color.Transparent;
-            this.iconPictureBox3.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.iconPictureBox3.IconChar = FontAwesome.Sharp.IconChar.CheckCircle;
-            this.iconPictureBox3.IconColor = System.Drawing.SystemColors.ControlText;
-            this.iconPictureBox3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox3.Location = new System.Drawing.Point(21, 21);
-            this.iconPictureBox3.Name = "iconPictureBox3";
-            this.iconPictureBox3.Size = new System.Drawing.Size(32, 32);
-            this.iconPictureBox3.TabIndex = 0;
-            this.iconPictureBox3.TabStop = false;
-            // 
-            // iconPictureBox2
-            // 
-            this.iconPictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.iconPictureBox2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.iconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.CheckCircle;
-            this.iconPictureBox2.IconColor = System.Drawing.SystemColors.ControlText;
-            this.iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox2.Location = new System.Drawing.Point(28, 21);
-            this.iconPictureBox2.Name = "iconPictureBox2";
-            this.iconPictureBox2.Size = new System.Drawing.Size(32, 32);
-            this.iconPictureBox2.TabIndex = 0;
-            this.iconPictureBox2.TabStop = false;
-            // 
-            // iconPictureBox1
-            // 
-            this.iconPictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.iconPictureBox1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.CheckCircle;
-            this.iconPictureBox1.IconColor = System.Drawing.SystemColors.ControlText;
-            this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox1.Location = new System.Drawing.Point(28, 21);
-            this.iconPictureBox1.Name = "iconPictureBox1";
-            this.iconPictureBox1.Size = new System.Drawing.Size(32, 32);
-            this.iconPictureBox1.TabIndex = 0;
-            this.iconPictureBox1.TabStop = false;
-            // 
-            // label25
-            // 
-            this.label25.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label25.Location = new System.Drawing.Point(22, 123);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(1108, 1);
-            this.label25.TabIndex = 12;
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Open Sans", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(896, 15);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(240, 22);
-            this.label26.TabIndex = 13;
-            this.label26.Text = "Estimat livrare: 2-4 zile lucratoare";
             // 
             // MockupProd
             // 
@@ -525,22 +209,12 @@ namespace view.mockupuri
             this.Text = "MockupProdPage";
             this.Load += new System.EventHandler(this.MockupProd_Load);
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -548,43 +222,17 @@ namespace view.mockupuri
         #endregion
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label2;
-        private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label16;
-        private FontAwesome.Sharp.IconPictureBox iconPictureBox3;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private FontAwesome.Sharp.IconPictureBox iconPictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label12;
-        private FontAwesome.Sharp.IconPictureBox iconPictureBox4;
-        private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.Label label26;
     }
 }

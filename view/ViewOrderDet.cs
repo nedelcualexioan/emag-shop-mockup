@@ -193,6 +193,8 @@ namespace view
             cbxDelivery.AutoSize = false;
             cbxDelivery.Size = new Size(243, 61);
             cbxDelivery.BringToFront();
+            cbxDelivery.Checked = true;
+            cbxDelivery.Enabled = false;
 
             sep2.Location = new Point(0, 348);
             sep2.Size = new Size(870, 1);
@@ -617,6 +619,46 @@ namespace view
         private void pctNext_Click(object sender,EventArgs e)
         {
             nextClick(this, null);
+        }
+
+        public String getMethod()
+        {
+            for(int i = 0; i < clbMethod.Items.Count; i++)
+            {
+                if (clbMethod.GetItemChecked(i) == true)
+                {
+                    if (clbMethod.Items[i].ToString().Contains("Card")){
+                        return "Card online";
+                    }
+                    else
+                    {
+                        return "Ramburs la curier";
+                    }
+                }
+            }
+
+            return null;
+        }
+
+        public String getInfo()
+        {
+
+            for(int i = 0; i < clbMethod.Items.Count; i++)
+            {
+                if (clbMethod.GetItemChecked(i) == true)
+                {
+                    if(clbMethod.Items[i].ToString().Contains("Card online"))
+                    {
+                        return clbMethod.Items[i].ToString().Replace("Card online - ", String.Empty);
+                    }
+                    else
+                    {
+                        return clbMethod.Items[i].ToString().Replace("Ramburs la curier - ", String.Empty);
+                    }
+                }
+            }
+
+            return null;
         }
     }
 }

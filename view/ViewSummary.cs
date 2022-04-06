@@ -48,9 +48,6 @@ namespace view
         private Label lblEmag;
         private Label lblEst;
         private Label lblSep4;
-        private Label lblProd;
-        private Label lblProdPrice;
-        private Label lblSep5;
         private Label lblDProc;
         private Label lblDProcPrice;
         private Label lblSep6;
@@ -59,13 +56,37 @@ namespace view
         private Label lblAgree;
         private PictureBox pctSend;
 
-        public ViewSummary(Form par, Customer customer, String method, String info)
+        private Panel pnlFooter;
+
+        private Label lblAtEmag;
+
+        private IconPictureBox pctOpen;
+        private Label lblOpen;
+        private Label lblOpenA;
+
+        private IconPictureBox pctSupport;
+        private Label lblSupport;
+        private Label lblSupportA;
+
+        private IconPictureBox pctReturn;
+        private Label lblReturn;
+        private Label lblReturnA;
+
+        private IconPictureBox pctSafe;
+        private Label lblSafe;
+        private Label lblSafeA;
+
+        public event EventHandler modifyClick;
+        public event EventHandler sendClick;
+
+        public ViewSummary(Form par, Customer customer, String method, String info, ViewCart cart)
         {
             this.Parent = par;
             this.Location = new Point(0, 98);
             this.Width = this.Parent.Width;
             this.Height = this.Parent.Height - 98;
             this.BackColor = Color.FromArgb(250, 250, 250);
+            this.AutoScroll = true;
 
             init();
 
@@ -232,23 +253,6 @@ namespace view
             lblSep4.BorderStyle = BorderStyle.FixedSingle;
             lblSep4.Location = new Point(22, 55);
 
-            lblProd.AutoSize = true;
-            lblProd.Font = new Font("Open Sans", 9.75f, FontStyle.Regular);
-            lblProd.Text = "1  x  Telefon mobil Xiaomi Redmi 9A, Dual SIM, 32GB, 4G, Carbon Grey";
-            lblProd.Location = new Point(24, 60);
-
-            lblProdPrice.AutoSize = false;
-            lblProdPrice.Size = new Size(71, 19);
-            lblProdPrice.TextAlign = ContentAlignment.MiddleRight;
-            lblProdPrice.Font = new Font("Open Sans", 9.75f, FontStyle.Bold);
-            lblProdPrice.Text = "480 Lei";
-            lblProdPrice.Location = new Point(1065, 60);
-
-            lblSep5.AutoSize = false;
-            lblSep5.Size = new Size(1108, 1);
-            lblSep5.Location = new Point(22, 92);
-            lblSep5.Text = String.Empty;
-            lblSep5.BorderStyle = BorderStyle.FixedSingle;
 
             lblDProc.AutoSize = true;
             lblDProc.Font = new Font("Open Sans", 9.75f, FontStyle.Bold);
@@ -256,8 +260,8 @@ namespace view
             lblDProc.Location = new Point(24, 97);
 
             lblDProcPrice.AutoSize = false;
-            lblDProcPrice.Size = lblProdPrice.Size;
-            lblDProcPrice.Left = lblProdPrice.Left;
+            lblDProcPrice.Size = new Size(67, 19);
+            lblDProcPrice.Location = new Point(1069, 97);
             lblDProcPrice.Top = 97;
             lblDProcPrice.TextAlign = ContentAlignment.MiddleRight;
             lblDProcPrice.Font = new Font("Open Sans", 9.75f, FontStyle.Bold);
@@ -272,25 +276,185 @@ namespace view
             lblTotal.AutoSize = false;
             lblTotal.Size = new Size(pnlContainer.Width, 35);
             lblTotal.Font = new Font("Open Sans", 18, FontStyle.Bold);
-            lblTotal.Top = 379;
+            lblTotal.Top = 373;
             lblTotal.TextAlign = ContentAlignment.MiddleCenter;
-            lblTotal.Text = "Total comanda: 471 Lei";
+            
 
             lblAgree.AutoSize = true;
             lblAgree.Font = new Font("Open Sans", 9.75f, FontStyle.Regular);
             lblAgree.Text = "Prin plasarea comenzii, ești de acord cu Termenii și Condițiile, cu\nPolitica de Confidențialitate.";
-            lblAgree.Top = 430;
+            lblAgree.Top = 424;
             lblAgree.Left = (lblAgree.Parent.Width - lblAgree.Width) / 2;
 
             pctSend.ImageLocation = Application.StartupPath + @"\images\send.png";
             pctSend.SizeMode = PictureBoxSizeMode.Normal;
-            pctSend.Top = 488;
+            pctSend.Top = 482;
             pctSend.Size = new Size(361, 55);
             pctSend.Left = (pnlContainer.Width - pctSend.Width) / 2;
             pctSend.Cursor = Cursors.Hand;
 
+            pnlFooter.BackColor = Color.White;
+            pnlFooter.Size = new Size(this.Width, 170);
+            pnlFooter.Left = 0;
+            pnlFooter.Top = this.Height - pnlFooter.Height;
+
+            lblAtEmag.Font = new Font("Open Sans", 9.75f, FontStyle.Bold);
+            lblAtEmag.AutoSize = true;
+            lblAtEmag.Text = "La eMAG te bucuri de:";
+            lblAtEmag.Location = new Point(284, 11);
+            lblAtEmag.ForeColor = SystemColors.ControlDarkDark;
+
+            pctOpen.IconChar = IconChar.BoxOpen;
+            pctOpen.IconSize = 51;
+            pctOpen.Size = new Size(56, 51);
+            pctOpen.Location = new Point(285, 45);
+            pctOpen.IconColor = SystemColors.ControlDarkDark;
+
+            lblOpen.Font = new Font("Open Sans", 9.75f, FontStyle.Regular);
+            lblOpen.AutoSize = true;
+            lblOpen.Text = "Deschiderea coletului la livrare";
+            lblOpen.Location = new Point(352, 48);
+
+            lblOpenA.Font = new Font("Open Sans", 8.25f, FontStyle.Regular);
+            lblOpenA.AutoSize = true;
+            lblOpenA.Text = "pentru produsele vandute de eMAG";
+            lblOpenA.Location = new Point(353, 69);
+
+            pctSupport.IconChar = IconChar.Headset;
+            pctSupport.IconSize = 51;
+            pctSupport.Size = new Size(56, 51);
+            pctSupport.Location = new Point(611, 45);
+            pctSupport.IconColor = SystemColors.ControlDarkDark;
+
+            lblSupport.Font = new Font("Open Sans", 9.75f, FontStyle.Regular);
+            lblSupport.AutoSize = true;
+            lblSupport.Text = "Suport 24/7";
+            lblSupport.Location = new Point(694, 48);
+
+            lblSupportA.Font = new Font("Open Sans", 8.25f, FontStyle.Regular);
+            lblSupportA.AutoSize = true;
+            lblSupportA.Text = "Operatorii nostri sunt gata sa-ti raspunda";
+            lblSupportA.Location = new Point(695, 69);
+
+            pctReturn.IconChar = IconChar.Box;
+            pctReturn.IconSize = 51;
+            pctReturn.Size = new Size(56, 51);
+            pctReturn.Location = new Point(966, 45);
+            pctReturn.IconColor = SystemColors.ControlDarkDark;
+
+            lblReturn.Font = new Font("Open Sans", 9.75f, FontStyle.Regular);
+            lblReturn.AutoSize = true;
+            lblReturn.Text = "30 de zile drept de retur";
+            lblReturn.Location = new Point(1028, 48);
+
+            lblReturnA.Font = new Font("Open Sans", 8.25f, FontStyle.Regular);
+            lblReturnA.AutoSize = true;
+            lblReturnA.Text = "pentru produsele vandute de eMAG";
+            lblReturnA.Location = new Point(1029, 69);
+
+            pctSafe.IconChar = IconChar.Lock;
+            pctSafe.IconSize = 51;
+            pctSafe.Size = new Size(56, 51);
+            pctSafe.Location = new Point(1284, 45);
+            pctSafe.IconColor = SystemColors.ControlDarkDark;
+
+            lblSafe.Font = new Font("Open Sans", 9.75f, FontStyle.Regular);
+            lblSafe.AutoSize = true;
+            lblSafe.Text = "Comenzi si plati 100% sigure";
+            lblSafe.Location = new Point(1345, 48);
+
+            lblSafeA.Font = new Font("Open Sans", 8.25f, FontStyle.Regular);
+            lblSafeA.AutoSize = true;
+            lblSafeA.Text = "Toate datele sunt transmise securizat";
+            lblSafeA.Location = new Point(1346, 69);
 
 
+            populate(cart);
+            lblTotal.Text = String.Format("Total comanda: {0} Lei", getTotal());
+
+            btnModify1.Click += new EventHandler(btnModify1_Click);
+
+            btnModify2.Click += new EventHandler(btnModify2_Click);
+            btnModify3.Click += new EventHandler(btnModify3_Click);
+
+            pctSend.Click += new EventHandler(pctSend_Click);
+        }
+
+        private void populate(ViewCart cart)
+        {
+
+            int yL = 60, yS = 92;
+
+            bool val = false;
+
+            foreach(Control c in cart.getContainer().Controls)
+            {
+                ProdCart pr = c as ProdCart;
+
+                if (pr != null)
+                {
+                    Label lblProd = new Label();
+
+                    lblProd.AutoSize = true;
+                    lblProd.Font = new Font("Open Sans", 9.75f, FontStyle.Regular);
+                    lblProd.Text = String.Format("{0}  x  {1}", pr.getQuant(), pr.getProd().Text);
+                    lblProd.Location = new Point(24, yL);
+
+                    pnlOrder.Controls.Add(lblProd);
+
+                    Label lblPrice = new Label();
+
+                    lblPrice.AutoSize = false;
+                    lblPrice.Size = new Size(71, 19);
+                    lblPrice.TextAlign = ContentAlignment.MiddleRight;
+                    lblPrice.Font = new Font("Open Sans", 9.75f, FontStyle.Bold);
+                    lblPrice.Text = pr.getPr();
+                    lblPrice.Location = new Point(1065, yL);
+
+                    if (lblPrice.Text.Contains("Lei") == false)
+                    {
+                        lblPrice.Text.Trim();
+                        lblPrice.Text += " Lei";
+                    }
+
+                    pnlOrder.Controls.Add(lblPrice);
+
+                    Label sep2 = new Label();
+                    
+
+                    sep2.AutoSize = false;
+                    sep2.Size = new Size(1108, 1);
+                    sep2.Location = new Point(22, yS);
+                    sep2.Text = String.Empty;
+                    sep2.BorderStyle = BorderStyle.FixedSingle;
+
+                    pnlOrder.Controls.Add(sep2);
+
+                    yL += 37;
+                    yS += 37;
+
+                    if (val == true)
+                    {
+
+                        pnlOrder.Height += 37;
+                        lblTotal.Top += 37;
+                        lblAgree.Top += 37;
+                        pctSend.Top += 37;
+                        lblDProc.Top += 37;
+                        lblDProcPrice.Top += 37;
+                        lblSep6.Top += 37;
+                        pnlContainer.Height += 37;
+
+                    }
+
+                    if(pnlFooter.Top - (pnlContainer.Top+pnlContainer.Height) < 30)
+                    {
+                        pnlFooter.Top += 32;
+                    }
+
+                    val = true;
+                }
+            }
         }
 
         private void init()
@@ -330,10 +494,6 @@ namespace view
             pctChk4 = new IconPictureBox();
             lblEmag = new Label();
             lblEst = new Label();
-            lblSep4 = new Label();
-            lblProd = new Label();
-            lblProdPrice = new Label();
-            lblSep5 = new Label();
             lblDProc = new Label();
             lblDProcPrice = new Label();
             lblSep6 = new Label();
@@ -341,6 +501,8 @@ namespace view
             lblTotal = new Label();
             lblAgree = new Label();
             pctSend = new PictureBox();
+
+            lblSep4 = new Label();
 
             pnlContainer.Parent = this;
 
@@ -377,9 +539,6 @@ namespace view
             lblEmag.Parent = pnlOrder;
             lblEst.Parent = pnlOrder;
             lblSep4.Parent = pnlOrder;
-            lblProd.Parent = pnlOrder;
-            lblProdPrice.Parent = pnlOrder;
-            lblSep5.Parent = pnlOrder;
             lblDProc.Parent = pnlOrder;
             lblDProcPrice.Parent = pnlOrder;
             lblSep6.Parent = pnlOrder;
@@ -388,8 +547,90 @@ namespace view
             lblAgree.Parent = pnlContainer;
             pctSend.Parent = pnlContainer;
 
+            pnlFooter = new Panel();
+            pnlFooter.Parent = this;
 
+            lblAtEmag = new Label();
+            pctOpen = new IconPictureBox();
+            lblOpen = new Label();
+            lblOpenA = new Label();
+            pctSupport = new IconPictureBox();
+            lblSupport = new Label();
+            lblSupportA = new Label();
+            pctReturn = new IconPictureBox();
+            lblReturn = new Label();
+            lblReturnA = new Label();
+            pctSafe = new IconPictureBox();
+            lblSafe = new Label();
+            lblSafeA = new Label();
+
+            lblAtEmag.Parent = pnlFooter;
+            pctOpen.Parent = pnlFooter;
+            lblOpen.Parent = pnlFooter;
+            lblOpenA.Parent = pnlFooter;
+            pctSupport.Parent = pnlFooter;
+            lblSupport.Parent = pnlFooter;
+            lblSupportA.Parent = pnlFooter;
+            pctReturn.Parent = pnlFooter;
+            lblReturn.Parent = pnlFooter;
+            lblReturnA.Parent = pnlFooter;
+            pctSafe.Parent = pnlFooter;
+            lblSafe.Parent = pnlFooter;
+            lblSafeA.Parent = pnlFooter;
         }
 
+        private int getTotal()
+        {
+            int sum = 0;
+
+            foreach(Control c in pnlOrder.Controls)
+            {
+                Label lbl = c as Label;
+
+                if (lbl != null)
+                {
+                    if (lbl.Text.Contains("Lei"))
+                    {
+                        String s = lbl.Text;
+
+                        sum += int.Parse(s.Replace(" Lei", String.Empty));
+                    }
+                }
+            }
+
+            return sum;
+        }
+
+        private void btnModify1_Click(object sender,EventArgs e)
+        {
+            if (modifyClick != null)
+            {
+                modifyClick(this, null);
+            }
+        }
+
+        private void btnModify2_Click(object sender,EventArgs e)
+        {
+            if (modifyClick != null)
+            {
+                modifyClick(this, null);
+            }
+        }
+
+        private void btnModify3_Click(object sender,EventArgs e)
+        {
+            if (modifyClick != null)
+            {
+                modifyClick(this, null);
+            }
+        }
+
+        private void pctSend_Click(object sender,EventArgs e)
+        {
+            if (sendClick != null)
+            {
+                sendClick(this, null);
+            }
+        }
     }
 }

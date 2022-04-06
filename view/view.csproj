@@ -56,6 +56,9 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FavCard.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="FrmHome.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -67,6 +70,12 @@
     </Compile>
     <Compile Include="AddAddress.cs">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mockupuri\MockupFav.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mockupuri\MockupFav.Designer.cs">
+      <DependentUpon>MockupFav.cs</DependentUpon>
     </Compile>
     <Compile Include="mockupuri\MockupFontAwe.cs">
       <SubType>Form</SubType>
@@ -85,6 +94,9 @@
     </Compile>
     <Compile Include="mockupuri\MockupProd.Designer.cs">
       <DependentUpon>MockupProd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewFavorite.cs">
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="ViewSummary.cs">
       <SubType>Component</SubType>
@@ -159,6 +171,9 @@
     </Compile>
     <EmbeddedResource Include="FrmHome.resx">
       <DependentUpon>FrmHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mockupuri\MockupFav.resx">
+      <DependentUpon>MockupFav.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="mockupuri\MockupFontAwe.resx">
       <DependentUpon>MockupFontAwe.cs</DependentUpon>
@@ -312,6 +327,8 @@
     <Content Include="bin\Debug\db\orderDetails.txt" />
     <Content Include="bin\Debug\db\orders.txt" />
     <Content Include="bin\Debug\db\products.txt" />
+    <None Include="bin\Debug\images\add.png" />
+    <None Include="bin\Debug\images\s21.png" />
     <None Include="bin\Debug\images\send.png" />
     <None Include="bin\Debug\images\next.png" />
     <None Include="Resources\Daco_59276651.png" />

@@ -49,5 +49,10 @@ namespace view.mockupuri
         {
 
         }
+
+        private void label22_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

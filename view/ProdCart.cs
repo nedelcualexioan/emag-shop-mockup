@@ -84,6 +84,8 @@ namespace view
             this.lblProd.AutoSize = false;
             this.lblProd.Size = new Size(285, 55);
 
+            
+
 
             this.lblStock.AutoSize = true;
             this.lblStock.Font = new Font("Open Sans", 9.75F, FontStyle.Regular);
@@ -160,6 +162,12 @@ namespace view
             return this.lblProd.Text;
         }
 
+
+        public bool isEmpty()
+        {
+            return String.IsNullOrWhiteSpace(txtQuant.Text);
+        }
+
         public int getQuant()
         {
             return int.Parse(this.txtQuant.Text);
@@ -205,6 +213,17 @@ namespace view
         public void setImage(String path)
         {
             this.pctProd.ImageLocation = path;
+        }
+
+        public Label getProd()
+        {
+            return this.lblProd;
+            
+        }
+
+        public String getPr()
+        {
+            return this.lblPrice.Text;
         }
 
     }

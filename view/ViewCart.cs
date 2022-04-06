@@ -15,7 +15,7 @@ namespace view
 
         private Label lblCart;
         private Label lblEmag;
-        
+            
 
         private Panel pnlSum;
         private Label lblSum;
@@ -68,7 +68,7 @@ namespace view
 
             containerOrders.Parent = this;
             containerOrders.Location = new Point(272, 85);
-            containerOrders.Size = new Size(975, 600);
+            containerOrders.Size = new Size(975, 700);
 
 
             init();
@@ -213,6 +213,7 @@ namespace view
 
             prod.priceCh += cmbQuant_TextChanged;
             prod.delClick += lblDelete_Click;
+            
         }
 
 
@@ -305,11 +306,11 @@ namespace view
             return this.sendDel;
         }
 
-        public bool isCart(Product p)
+        public bool isCart(Product p, String color)
         {
             foreach(ProdCart c in orders)
             {
-                if (c.getName().Equals(p.getName()))
+                if (c.getName().Contains(p.getName()) && c.getName().Contains(color))
                 {
                     return true;
                 }
@@ -322,33 +323,50 @@ namespace view
             return this.orders.Count;
         }
 
-        public ProdCart getProdCart(Product p)
+        public ProdCart getProdCart(Product p, String color)
         {
             foreach (ProdCart cart in orders)
             {
-                if (cart.getName().Equals(p.getName()))
+                if (cart.getName().Contains(p.getName()) && cart.getName().Contains(color))
                 {
                     return cart;
                 }
             }
             return null;
         }
-        public void setQuant (Product p, int val)
+        public void setQuant (Product p, int val, String color)
         {
             foreach(ProdCart cart in orders)
             {
-                if (cart.getName().Equals(p.getName()))
+                if (cart.getName().Contains(p.getName()) && cart.getName().Contains(color))
                 {
                     cart.setQuant(val);
                 }
             }
         }
 
+        public bool isEmpty()
+        {
+            foreach(Control c in containerOrders.Controls)
+            {
+                ProdCart pr = c as ProdCart;
+
+                if (pr != null)
+                {
+                    if (pr.isEmpty())
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+
         public void pctNext_Click(object sender,EventArgs e)
         {
             nextClick(this, null);
         }
-        public void setPic(Product p, String path)
+        public void setPic(Product p, String path, String color)
         {
             foreach(Control c in containerOrders.Controls)
             {
@@ -357,7 +375,7 @@ namespace view
                 if (prod != null)
                 {
 
-                    if (prod.getProdName().Contains(p.getName()))
+                    if (prod.getProdName().Contains(p.getName()) && prod.getName().Contains(color))
                     {
                         prod.setImage(path);
 
@@ -365,6 +383,16 @@ namespace view
                     }
                 }
             }
+        }
+
+        public int getAmmount()
+        {
+            return int.Parse(Regex.Replace(lblTotalPr.Text, "[^0-9]+", String.Empty));
+        }
+
+        public Panel getContainer()
+        {
+            return this.containerOrders;
         }
 
     /*   public void populateOrders(ControllerOrderDetails ctr)

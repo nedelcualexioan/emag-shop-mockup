@@ -74,7 +74,15 @@ namespace view
                 control.Hide();
             }
 
-            initialize();
+            // initialize();
+
+            ViewFavorite fav = new ViewFavorite(this);
+
+
+            fav.add(products.getProduct(0));
+            fav.add(products.getProduct(1));
+
+            fav.Show();
 
             header.userClick += login_Click;
             header.logoClick += homeLogo_Click;
@@ -228,14 +236,14 @@ namespace view
                 login.Hide();
 
                 log.Show();
-                log.setEmail(login.getEmail());
+                log.setEmail(login.getEmail().ToLower());
             }
             else
             {
                 login.Hide();
 
                 register.Show();
-                register.setEmail(login.getEmail());
+                register.setEmail(login.getEmail().ToLower());
             }
         }
 
@@ -302,6 +310,13 @@ namespace view
                     home.Show();
                     navbar.Show();
                 }
+                else if (viewSummary != null && viewSummary.Visible)
+                {
+                    viewSummary.Hide();
+                    navbar.Show();
+                    home.Show();
+                }
+
                 this.BackColor = SystemColors.Control;
             }
         }
@@ -375,8 +390,6 @@ namespace view
                 det.setProductId(p.getId());
                 det.setPrice(p.getPrice());
 
-                order.setAmmount(order.getAmmount() + p.getPrice());
-
                 products.setQuantity(p.getName(), p.getQuantity() - 1);
 
                 if (details.isDetails(p.getId(), order.getId()) == false)
@@ -389,18 +402,17 @@ namespace view
                     det.setId(det.getId() - 1);
                 }
 
-                if (cart.isCart(p) == false)
+                if (cart.isCart(p, product.getColor()) == false)
                 {
                     this.cart.add(p, product.getColor());
                     MessageBox.Show("Produs adaugat in cos", product.getName(), MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    this.cart.setPic(p, product.getPath());
-
+                    this.cart.setPic(p, product.getPath(), product.getColor());
 
                 }
-                else if (cart.getProdCart(p).getQuant() < 4)
+                else if (cart.getProdCart(p, product.getColor()).getQuant() < 4)
                 {
-                    cart.setQuant(p, cart.getProdCart(p).getQuant() + 1);
+                    cart.setQuant(p, cart.getProdCart(p,product.getColor()).getQuant() + 1, product.getColor());
                     MessageBox.Show("Produs adaugat in cos", product.getName(), MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
@@ -449,6 +461,18 @@ namespace view
                 else
                     emptyCart.Show();
             }
+            else if (orderDet != null && orderDet.Visible)
+            {
+                orderDet.Hide();
+
+                cart.Show();
+            }
+            else if (viewSummary != null && viewSummary.Visible)
+            {
+                viewSummary.Hide();
+
+                cart.Show();
+            }
 
             this.BackColor = Color.FromArgb(228, 241, 249);
 
@@ -472,16 +496,24 @@ namespace view
 
         private void cartNext_Click(object sender,EventArgs e)
         {
-            orderDet = new ViewOrderDet(this, customer, details.getDetails(order), order.getAmmount(), customers);
+            if (cart.isEmpty() == false)
+            {
 
-            orderDet.nextClick += detailsNext_Click;
+                orderDet = new ViewOrderDet(this, customer, details.getCount(), cart.getAmmount(), customers);
 
-            cart.Hide();
+                orderDet.nextClick += detailsNext_Click;
 
-            orderDet.Show();
-            navbar.Hide();
+                cart.Hide();
 
-            this.BackColor = SystemColors.Control;
+                orderDet.Show();
+                navbar.Hide();
+
+                this.BackColor = Color.FromArgb(250, 250, 250);
+            }
+            else
+            {
+                MessageBox.Show("Cantitate invalida", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
 
         private void detailsNext_Click(object sender,EventArgs e)
@@ -489,6 +521,42 @@ namespace view
             if (orderDet.isChecked() == false)
             {
                 MessageBox.Show("Va rugam sa alegeti o modalitate de plata", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (customer.getAddress() == "none")
+            {
+                MessageBox.Show("Nicio adresa setata, va rugam sa adaugati datele pentru facturare", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else
+            {
+                viewSummary = new ViewSummary(this, customer, orderDet.getMethod(), orderDet.getInfo(), cart);
+
+                orderDet.Hide();
+
+                viewSummary.Show();
+
+                viewSummary.modifyClick += summaryModify_Click;
+                viewSummary.sendClick += summarySend_Click;
+            }
+        }
+
+        private void summaryModify_Click(object sender,EventArgs e)
+        {
+            viewSummary.Hide();
+            orderDet.Show();
+        }
+
+        private void summarySend_Click(object sender,EventArgs e)
+        {
+            if(orderDet.getMethod().Equals("Ramburs la curier"))
+            {
+                viewSummary.Hide();
+                home.Show();
+                navbar.Show();
+
+                this.BackColor = SystemColors.Control;
+
+                MessageBox.Show("Comanda a fost plasata!\nPentru mai multe detalii verificati sectiunea contul meu.", "Actiune initiata cu succes", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
             }
         }
     }

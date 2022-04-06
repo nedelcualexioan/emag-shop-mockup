@@ -58,7 +58,7 @@ namespace emag
         {
             for(int i = 0; i < customers.Count(); i++)
             {
-                if (customers[i].getEmail().Equals(email))
+                if (customers[i].getEmail().Equals(email,StringComparison.OrdinalIgnoreCase))
                     return true;
             }
             return false;

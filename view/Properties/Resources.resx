@@ -118,6 +118,9 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="circle1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\images\circle1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="pattern_white_x0.5_pattern_vectorized_copy_2x-613x460" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pattern_white_x0.5_pattern_vectorized_copy_2x-613x460.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -196,8 +199,11 @@
   <data name="585e4bf3cb11b227491c339a" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\585e4bf3cb11b227491c339a.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="circle1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\images\circle1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="send" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\images\send.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="continue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\images\continue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ad1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ad1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -228,6 +234,9 @@
   </data>
   <data name="a52" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\a52.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="s21" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\images\s21.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Logo_Color" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Logo_Color.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -268,9 +277,6 @@
   <data name="macAir" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\macAir.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="continue" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\images\continue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="gray-wallpaper-7" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\gray-wallpaper-7.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -292,7 +298,7 @@
   <data name="cart" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\images\cart.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="send" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\images\send.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="add" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\images\add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

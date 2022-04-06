@@ -214,6 +214,16 @@ namespace view.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap add {
+            get {
+                object obj = ResourceManager.GetObject("add", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap addButton {
             get {
                 object obj = ResourceManager.GetObject("addButton", resourceCulture);
@@ -568,6 +578,16 @@ namespace view.Properties {
         internal static System.Drawing.Bitmap rounded_rectangle_64 {
             get {
                 object obj = ResourceManager.GetObject("rounded-rectangle-64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap s21 {
+            get {
+                object obj = ResourceManager.GetObject("s21", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
