@@ -27,6 +27,7 @@ namespace view
         private ViewEmptyCart emptyCart;
         private ViewOrderDet orderDet;
         private ViewSummary viewSummary;
+        private ViewFavorite viewFav;
 
         private Order order;
         private Customer customer;
@@ -61,7 +62,8 @@ namespace view
             log = new ViewLogNext(this);
             cart = new ViewCart(this);
             emptyCart = new ViewEmptyCart(this);
-           
+            viewFav = new ViewFavorite(this);
+
 
             customers = new ControllerCustomers();
             products = new ControllerProducts();
@@ -74,20 +76,14 @@ namespace view
                 control.Hide();
             }
 
-            // initialize();
-
-            ViewFavorite fav = new ViewFavorite(this);
-
-
-            fav.add(products.getProduct(0));
-            fav.add(products.getProduct(1));
-
-            fav.Show();
+            initialize();
+            
 
             header.userClick += login_Click;
             header.logoClick += homeLogo_Click;
-            header.searchClick += headerSearch_Click;
+            header.searchClick += (s, e) => headerSearch_Click(s, e, viewFav, products);
             header.cartClick += headerCart_Click;
+            header.favClick += headerFav_Click;
 
             navbar.cmbChange += cmbProducts_SelectedIndexChanged;
 
@@ -99,7 +95,7 @@ namespace view
 
             log.btnClick += logNextBtn_Click;
 
-            home.ProdClick += homeCard_Click;
+            home.ProdClick += (s, e) => homeCard_Click(s, e, viewFav, products);
 
 
 
@@ -108,6 +104,10 @@ namespace view
             emptyCart.returnClick += btnReturn_Click;
 
             cart.nextClick += cartNext_Click;
+
+            viewFav.btnClick += favoriteBtn_Click;
+
+            viewFav.addClick += (s, e) => favoriteAdd_Click(s, e, viewFav, products);
         }
 
 
@@ -165,6 +165,11 @@ namespace view
                 else if (emptyCart.Visible)
                 {
                     emptyCart.Hide();
+                    header.Hide();
+                }
+                else if (viewFav.Visible)
+                {
+                    viewFav.Hide();
                     header.Hide();
                 }
 
@@ -271,12 +276,13 @@ namespace view
             }
         }
 
-        private void homeCard_Click(object sender,EventArgs e)
+        private void homeCard_Click(object sender,EventArgs e,ViewFavorite fav,ControllerProducts prods)
         {
             home.Hide();
             navbar.Hide();
             product = new ProductPage(this, home.getLastProd());
-            product.addClick += productAdd_Click;
+            product.addClick += (a, b) => productAdd_Click(a, b, fav, prods);
+            product.favClick += productFav_Click;
             product.Show();
 
             this.BackColor = Color.White;
@@ -304,7 +310,7 @@ namespace view
                     home.Show();
                     navbar.Show();
                 }
-                else if (orderDet.Visible)
+                else if (orderDet != null && orderDet.Visible)
                 {
                     orderDet.Hide();
                     home.Show();
@@ -316,12 +322,18 @@ namespace view
                     navbar.Show();
                     home.Show();
                 }
+                else if (viewFav.Visible)
+                {
+                    viewFav.Hide();
+                    navbar.Show();
+                    home.Show();
+                }
 
                 this.BackColor = SystemColors.Control;
             }
         }
 
-        private void headerSearch_Click(object sender,EventArgs e)
+        private void headerSearch_Click(object sender,EventArgs e,ViewFavorite fav,ControllerProducts prods)
         {
             Product p = products.getProd(header.getSearch());
             if (p != null)
@@ -363,9 +375,18 @@ namespace view
 
                     this.BackColor = Color.White;
                 }
-                
+                else if (viewFav.Visible)
+                {
+                    product = new ProductPage(this, p);
 
-                product.addClick += productAdd_Click;
+                    viewFav.Hide();
+                    product.Show();
+
+                    this.BackColor = Color.White;
+                }
+
+                product.favClick += productFav_Click;
+                product.addClick += (a, b) => productAdd_Click(a, b, fav, prods);
             }
             else if(header.isNull() == false && header.getSearch().Equals("Ai libertatea să alegi ce vrei") == false)
             {
@@ -373,7 +394,7 @@ namespace view
             }
         }
 
-        private void productAdd_Click(object sender,EventArgs e)
+        private void productAdd_Click(object sender,EventArgs e,ViewFavorite fav,ControllerProducts prods)
         {
 
             if (product.isStock() == false)
@@ -404,7 +425,7 @@ namespace view
 
                 if (cart.isCart(p, product.getColor()) == false)
                 {
-                    this.cart.add(p, product.getColor());
+                    this.cart.add(p, product.getColor(), fav, prods);
                     MessageBox.Show("Produs adaugat in cos", product.getName(), MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     this.cart.setPic(p, product.getPath(), product.getColor());
@@ -419,6 +440,8 @@ namespace view
                 {
                     MessageBox.Show("Ati atins maximul cantitatii pentru acest produs", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+
+                
 
                 
             }
@@ -473,6 +496,15 @@ namespace view
 
                 cart.Show();
             }
+            else if (viewFav.Visible)
+            {
+                viewFav.Hide();
+
+                if (cart.getCount() > 0)
+                    cart.Show();
+                else
+                    emptyCart.Show();
+            }
 
             this.BackColor = Color.FromArgb(228, 241, 249);
 
@@ -483,6 +515,12 @@ namespace view
 
 
             details.rmOrderDetails(products.getProdPartial(cart.getSender().getName()));
+
+            if(cart.getCount() == 0)
+            {
+                cart.Hide();
+                emptyCart.Show();
+            }
 
 
         }
@@ -557,6 +595,137 @@ namespace view
 
                 MessageBox.Show("Comanda a fost plasata!\nPentru mai multe detalii verificati sectiunea contul meu.", "Actiune initiata cu succes", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+            }
+        }
+
+        private void headerFav_Click(object sender,EventArgs e)
+        {
+
+            if (viewFav.Visible == false)
+            {
+
+                if (home.Visible)
+                {
+                    home.Hide();
+                    navbar.Hide();
+                }
+                else if (cart.Visible)
+                {
+                    cart.Hide();
+                }
+                else if (product != null && product.Visible)
+                {
+                    product.Hide();
+                }
+                else if (emptyCart.Visible)
+                {
+                    emptyCart.Hide();
+                }
+                else if (orderDet != null && orderDet.Visible)
+                {
+                    orderDet.Hide();
+                }
+                else if (viewSummary != null && viewSummary.Visible)
+                {
+                    viewSummary.Hide();
+                }
+
+                viewFav.Show();
+                this.BackColor = Color.FromArgb(242, 242, 247);
+
+            }
+
+        }
+
+        private void favoriteBtn_Click(object sender,EventArgs e)
+        {
+            viewFav.Hide();
+
+            home.Show();
+            navbar.Show();
+
+            this.BackColor = SystemColors.Control;
+        }
+
+        private void productFav_Click(object sender,EventArgs e)
+        {
+            if (viewFav.isFav(products.getProduct(product.getName())) == false)
+            {
+                viewFav.add(products.getProduct(product.getName()));
+
+                MessageBox.Show("Produsul a fost adaugat la Favorite", "Actiune initiata cu succes", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Produsul este deja in lista de Favorite", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void favoriteAdd_Click(object sender,EventArgs e,ViewFavorite fav,ControllerProducts prods)
+        {
+            FavCard card = sender as FavCard;
+
+            if (card.isStock() == false)
+                MessageBox.Show("Stoc epuizat!", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else if (isLogged == true)
+            {
+                OrderDetails det = new OrderDetails();
+
+                det.setId(details.nextId());
+
+                det.setOrderId(order.getId());
+
+                Product p = products.getProd(card.getName());
+
+                det.setProductId(p.getId());
+                det.setPrice(p.getPrice());
+
+                products.setQuantity(p.getName(), p.getQuantity() - 1);
+
+                if (details.isDetails(p.getId(), order.getId()) == false)
+                {
+                    details.add(det);
+                }
+                else
+                {
+                    details.contopire(p.getId(), order.getId(), det.getPrice(), 1);
+                    det.setId(det.getId() - 1);
+                }
+
+                if (cart.isCart(p.getName()) == false)
+                {
+                    this.cart.add(products.getProduct(card.getName()), String.Empty, fav, prods);
+                    MessageBox.Show("Produs adaugat in cos", card.getName(), MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    this.cart.setPic(p);
+
+                }
+                else if (cart.getProdCart(p).getQuant() < 4)
+                {
+                    cart.setQuant(p, cart.getProdCart(p).getQuant() + 1);
+                    MessageBox.Show("Produs adaugat in cos", card.getName(), MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Ati atins maximul cantitatii pentru acest produs", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+
+
+
+            }
+            else
+            {
+                DialogResult dialog = MessageBox.Show("Pentru a adauga un produs in cos trebuie sa va autentificati!", "Adaugare esuata", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+
+                if (dialog == DialogResult.OK)
+                {
+                    viewFav.Hide();
+                    header.Hide();
+
+                    login.Show();
+                    this.BackColor = SystemColors.Control;
+                }
             }
         }
     }

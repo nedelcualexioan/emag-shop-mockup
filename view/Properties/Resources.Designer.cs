@@ -304,6 +304,16 @@ namespace view.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap emptyFav {
+            get {
+                object obj = ResourceManager.GetObject("emptyFav", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ezgif_1_0255f46868 {
             get {
                 object obj = ResourceManager.GetObject("ezgif-1-0255f46868", resourceCulture);

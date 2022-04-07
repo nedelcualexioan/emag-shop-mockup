@@ -26,6 +26,7 @@ namespace view
         public event EventHandler logoClick;
         public event EventHandler searchClick;
         public event EventHandler cartClick;
+        public event EventHandler favClick;
 
         public Header(Form par)
         {
@@ -133,6 +134,9 @@ namespace view
             this.pctCart.Click += new EventHandler(this.cart_Click);
             this.lblCart.Click += new EventHandler(this.cart_Click);
 
+            this.lblFavorite.Click += new EventHandler(this.lblFavorite_Click);
+            this.pctFavorite.Click += new EventHandler(this.lblFavorite_Click);
+
         }
 
         private void txtSearch_Click(object sender, EventArgs e)
@@ -200,6 +204,14 @@ namespace view
             }
         }
 
-       
+        private void lblFavorite_Click(object sender,EventArgs e)
+        {
+            if(favClick != null)
+            {
+                favClick(this, null);
+            }
+        }
+
+        
     }
 }

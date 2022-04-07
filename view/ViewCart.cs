@@ -188,7 +188,7 @@ namespace view
 
         }
 
-        public void add(Product p, String text)
+        public void add(Product p, String text, ViewFavorite fav, ControllerProducts prods)
         {
 
             ProdCart prod = new ProdCart(p, text, new Point(0, height), containerOrders);
@@ -213,6 +213,9 @@ namespace view
 
             prod.priceCh += cmbQuant_TextChanged;
             prod.delClick += lblDelete_Click;
+            prod.lblMove += (s, e) => lblFav_Click(s, e, fav, prods);
+
+            rearrange();
             
         }
 
@@ -280,20 +283,64 @@ namespace view
 
         }
 
+        private void lblFav_Click(object sender,EventArgs e,ViewFavorite fav,ControllerProducts products)
+        {
+
+            
+
+            foreach (ProdCart p in orders)
+            {
+                if (p == sender)
+                {
+                    orders.Remove(p);
+
+                    int sum = int.Parse(Regex.Replace(lblSumPr.Text, @"[^0-9]+", String.Empty));
+
+                    sum -= p.getPrice();
+
+                    lblSumPr.Text = sum.ToString() + " Lei";
+                    lblTotalPr.Text = sum.ToString() + " Lei";
+
+                    sendDel = p;
+
+                    fav.add(products.getProdPartial(p.getName()));
+
+                    break;
+                }
+            }
+
+            containerOrders.Controls.Clear();
+
+
+            this.lblEmag.Parent = containerOrders;
+            this.lblEmag.Location = new Point(-6, 0);
+
+
+
+            rearrange();
+
+
+
+            detailsDel(this, null);
+
+            MessageBox.Show("Produsul a fost adaugat la favorite", "Actiune initiata cu succes", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
         public void rearrange()
         {
+
 
             height = 34;
 
             foreach(ProdCart p in orders)
             {
-                containerOrders.Size = new Size(975, 360);
+                containerOrders.Size = new Size(975, 700);
 
                 ProdCart aux = p;
 
-                p.Parent = containerOrders;
+                aux.Parent = containerOrders;
 
-                p.Location = new Point(0, height);
+                aux.Location = new Point(0, height);
 
                 height += 312;
             }
@@ -334,11 +381,31 @@ namespace view
             }
             return null;
         }
+
+        public ProdCart getProdCart(Product p)
+        {
+            foreach(ProdCart cart in orders)
+            {
+                if (cart.getName().Equals(p.getName()))
+                    return cart;
+            }
+            return null;
+        }
         public void setQuant (Product p, int val, String color)
         {
             foreach(ProdCart cart in orders)
             {
                 if (cart.getName().Contains(p.getName()) && cart.getName().Contains(color))
+                {
+                    cart.setQuant(val);
+                }
+            }
+        }
+        public void setQuant(Product p, int val)
+        {
+            foreach (ProdCart cart in orders)
+            {
+                if (cart.getName().Equals(p.getName()))
                 {
                     cart.setQuant(val);
                 }
@@ -385,6 +452,24 @@ namespace view
             }
         }
 
+        public void setPic(Product p)
+        {
+            foreach(Control c in containerOrders.Controls)
+            {
+                ProdCart prod = c as ProdCart;
+
+                if (prod != null)
+                {
+                    if (prod.getProdName().Equals(p.getName()))
+                    {
+                        prod.setImage(Application.StartupPath + @"\images\" + p.getPicture());
+
+                        break;
+                    }
+                }
+            }
+        }
+
         public int getAmmount()
         {
             return int.Parse(Regex.Replace(lblTotalPr.Text, "[^0-9]+", String.Empty));
@@ -393,6 +478,16 @@ namespace view
         public Panel getContainer()
         {
             return this.containerOrders;
+        }
+
+        public bool isCart(String s)
+        {
+            foreach (ProdCart c in orders)
+            {
+                if (c.getName().Contains(s))
+                    return true;
+            }
+            return false;
         }
 
     /*   public void populateOrders(ControllerOrderDetails ctr)

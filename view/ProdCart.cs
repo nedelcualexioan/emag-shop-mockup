@@ -32,6 +32,8 @@ namespace view
 
         public event EventHandler delClick = delegate { };
 
+        public event EventHandler lblMove = delegate { };
+
         public ProdCart(Product prod, String text, Point p, Panel par)
         {
 
@@ -72,7 +74,7 @@ namespace view
             this.lblProd.Font = new Font("Open Sans", 12F, FontStyle.Bold);
             this.lblProd.Location = new Point(294, 80);
 
-            if (Directory.EnumerateFiles(Application.StartupPath + @"\images\products\" + prod.getName()).Count() != 0)
+            if (Directory.EnumerateFiles(Application.StartupPath + @"\images\products\" + prod.getName()).Count() != 0 && String.IsNullOrWhiteSpace(text) == false)
             {
                 this.lblProd.Text = prod.getName() + String.Format(" ({0})", text);
             }
@@ -135,6 +137,8 @@ namespace view
             this.txtQuant.TextChanged += new EventHandler((s, e) => txtQuant_TextChanged(s, e, prod));
 
             this.lblDelete.Click += new EventHandler(lblDelete_Click);
+
+            this.lblFav.Click += new EventHandler(lblFav_Click);
         }
 
         public ProdCart()
@@ -205,6 +209,11 @@ namespace view
             delClick(this, null);
         }
 
+        private void lblFav_Click(object sender,EventArgs e)
+        {
+            lblMove(this, null);
+        }
+
         public String getProdName()
         {
             return this.lblProd.Text;
@@ -225,6 +234,8 @@ namespace view
         {
             return this.lblPrice.Text;
         }
+
+        
 
     }
 }

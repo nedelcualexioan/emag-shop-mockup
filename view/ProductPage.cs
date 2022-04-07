@@ -26,6 +26,8 @@ namespace view
 
         public event EventHandler addClick;
 
+        public event EventHandler favClick;
+
         private String defPath;
 
         public ProductPage(Form par, Product p)
@@ -134,6 +136,8 @@ namespace view
             populateCards(p);
 
             pctAdd.Click += new EventHandler(pctAdd_Click);
+
+            pctFav.Click += new EventHandler(pctFav_Click);
         }
         
         private void pctAdd_Click(object sender,EventArgs e)
@@ -272,6 +276,14 @@ namespace view
         public String getPath()
         {
             return pctProduct.ImageLocation;
+        }
+
+        private void pctFav_Click(object sender, EventArgs e)
+        {
+            if (favClick != null)
+            {
+                favClick(this, null);
+            }
         }
     }
 }

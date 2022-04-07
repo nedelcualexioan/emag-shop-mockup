@@ -22,13 +22,15 @@ namespace view
         private PictureBox pctAdd;
         private Label lblDel;
 
+        public event EventHandler addClick;
+        public event EventHandler delClick;
 
         public FavCard(Panel par, Product prod, Point p)
         {
             this.Parent = par;
             this.BackColor = Color.White;
             this.Location = p;
-            this.Size = new Size(627, 222);
+            this.Size = new Size(par.Width - 4, 222);
 
             init();
 
@@ -86,6 +88,9 @@ namespace view
             lblDel.Location = new Point(253, 170);
             lblDel.Cursor = Cursors.Hand;
             lblDel.ForeColor = SystemColors.Highlight;
+
+            pctAdd.Click += new EventHandler(this.pctAdd_Click);
+            lblDel.Click += new EventHandler(lblDel_Click);
         }
 
         private void init()
@@ -109,6 +114,35 @@ namespace view
             lblDel.Parent = this;
         }
 
+        public String getName()
+        {
+            return this.lblProd.Text;
+        }
 
+        private void pctAdd_Click(object sender,EventArgs e)
+        {
+            if (addClick != null)
+            {
+                addClick(this, null);
+            }
+        }
+
+        public bool isStock()
+        {
+            if (lblStock.Text.Contains("epuizat"))
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+        private void lblDel_Click(object sender,EventArgs e)
+        {
+            if (delClick != null)
+            {
+                delClick(this, null);
+            }
+        }
     }
 }
