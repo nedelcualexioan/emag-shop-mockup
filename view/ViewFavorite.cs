@@ -142,7 +142,7 @@ namespace view
 
                 if (card != null)
                 {
-                    if (card.getName().Equals(p.getName()))
+                    if (p.getName().Contains(card.getName()))
                         return true;
                 }
             }

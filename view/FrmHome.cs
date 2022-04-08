@@ -28,6 +28,7 @@ namespace view
         private ViewOrderDet orderDet;
         private ViewSummary viewSummary;
         private ViewFavorite viewFav;
+        private ViewUser user;
 
         private Order order;
         private Customer customer;
@@ -77,7 +78,6 @@ namespace view
             }
 
             initialize();
-            
 
             header.userClick += login_Click;
             header.logoClick += homeLogo_Click;
@@ -179,6 +179,12 @@ namespace view
             else
             {
                 
+
+                navbar.Hide();
+                home.Hide();
+                user.Show();
+
+                this.BackColor = Color.FromArgb(250, 250, 250);
             }
 
             
@@ -232,6 +238,9 @@ namespace view
             register.clearConfirm();
 
             isLogged = true;
+
+            user = new ViewUser(this, customer, 5, 2);
+            user.Hide();
         }
 
         private void loginBtnNext_Click(object sender, EventArgs e) 
@@ -269,6 +278,10 @@ namespace view
                 order = new Order(orders.nextId(), customer.getId());
 
                 isLogged = true;
+
+                user = new ViewUser(this, customer, 0, 2);
+
+                user.Hide();
             }
             else
             {
@@ -325,6 +338,12 @@ namespace view
                 else if (viewFav.Visible)
                 {
                     viewFav.Hide();
+                    navbar.Show();
+                    home.Show();
+                }
+                else if (user != null && user.Visible)
+                {
+                    user.Hide();
                     navbar.Show();
                     home.Show();
                 }
@@ -394,7 +413,7 @@ namespace view
             }
         }
 
-        private void productAdd_Click(object sender,EventArgs e,ViewFavorite fav,ControllerProducts prods)
+        private void productAdd_Click(object sender,EventArgs e,ViewFavorite fav,ControllerProducts prods)  
         {
 
             if (product.isStock() == false)
@@ -440,10 +459,6 @@ namespace view
                 {
                     MessageBox.Show("Ati atins maximul cantitatii pentru acest produs", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-
-                
-
-                
             }
             else
             {

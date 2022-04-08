@@ -144,5 +144,10 @@ namespace view
                 delClick(this, null);
             }
         }
+
+        public String getProd()
+        {
+            return this.lblProd.Text;
+        }
     }
 }

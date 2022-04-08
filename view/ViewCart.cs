@@ -133,10 +133,12 @@ namespace view
 
             this.lblDelivPr.AutoSize = true;
             this.lblDelivPr.Font = new Font("Open Sans", 12F, FontStyle.Bold);
-            this.lblDelivPr.ForeColor = Color.Green;
             this.lblDelivPr.Location = new Point(185, 112);
             this.lblDelivPr.Size = new Size(83, 23);
-            this.lblDelivPr.Text = "GRATUIT";
+            this.lblDelivPr.Text = "15 Lei";
+            lblDelivPr.Left = lblSumPr.Left;
+            lblDelivPr.Size = lblSumPr.Size;
+            lblDelivPr.TextAlign = ContentAlignment.MiddleRight;
 
             this.pctSepa.ImageLocation = Application.StartupPath + @"\images\line-sep.png";
             this.pctSepa.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -488,6 +490,11 @@ namespace view
                     return true;
             }
             return false;
+        }
+
+        public List<ProdCart> getList()
+        {
+            return this.orders;
         }
 
     /*   public void populateOrders(ControllerOrderDetails ctr)

@@ -95,6 +95,9 @@
     <Compile Include="mockupuri\MockupProd.Designer.cs">
       <DependentUpon>MockupProd.cs</DependentUpon>
     </Compile>
+    <Compile Include="OrderCard.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="ViewFavorite.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -167,6 +170,9 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="ViewRegister.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ViewUser.cs">
       <SubType>Component</SubType>
     </Compile>
     <EmbeddedResource Include="FrmHome.resx">

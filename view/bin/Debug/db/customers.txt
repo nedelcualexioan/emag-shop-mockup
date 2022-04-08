@@ -98,5 +98,5 @@
 98,Kimberlee FitzGibbon,kfitzgibbon2p@geocities.com,FWDcVX,none,False
 99,Valentia Dupree,vdupree2q@reddit.com,jzLbmn8,none,False
 100,Jocelyne Bubeer,jbubeer2r@pagesperso-orange.fr,AnqZgPITQqJi,none,False
-101,asd,admin@emag.ro,Admin,asd,True
+101,Marcel,admin@emag.ro,Admin,Strada Lunga,True
 
